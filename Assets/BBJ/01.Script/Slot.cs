@@ -4,7 +4,7 @@ public class Slot : MonoBehaviour
 {
     [SerializeField] private GameObject speechBubble;
     public static Slot SelectSlot { get; private set; }
-
+    private bool isThere;
     private void OnMouseEnter()
     {
         if(SelectSlot == null)
@@ -27,5 +27,20 @@ public class Slot : MonoBehaviour
         gameObject.SetActive(isActive);
         if(!isActive)
             OnMouseExit();
+        isThere = !isActive;
+        CheckTorch();
+    }
+    private void CheckTorch()
+    {
+        if(!isThere)
+        gameObject.SetActive(TorchUi.Instance.TorchCount > 0);
+    }
+    private void Start()
+    {
+        TorchUi.Instance.OnCountApply += CheckTorch;
+    }
+    private void OnDestroy()
+    {
+        TorchUi.Instance.OnCountApply -= CheckTorch;
     }
 }
