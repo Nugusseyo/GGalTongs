@@ -326,13 +326,13 @@ TextureImporter:
       name: Skill
       rect:
         serializedVersion: 2
-        x: 258
-        y: 449
-        width: 62
-        height: 62
+        x: 320
+        y: 384
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 13, y: 13, z: 13, w: 13}
+      border: {x: 16, y: 16, z: 16, w: 16}
       customData: 
       outline: []
       physicsShape: []
@@ -345,7 +345,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Picture
+      name: Picture_Stat
       rect:
         serializedVersion: 2
         x: 193
@@ -367,7 +367,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Desc
+      name: Desc_Stat
       rect:
         serializedVersion: 2
         x: 512
@@ -388,6 +388,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Picture_Skill
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 449
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 13, y: 13, z: 13, w: 13}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac2bcba305f81d43b70ff40b5181028
+      internalID: -580216596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Desc_Skill
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 11, y: 11, z: 11, w: 11}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9066e30401aac4bb35186c3e173c0e
+      internalID: -1529285894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -402,8 +446,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Desc: 1850382790
-      Picture: -170571048
+      Desc_Skill: -1529285894
+      Desc_Stat: 1850382790
+      Picture_Skill: -580216596
+      Picture_Stat: -170571048
       Skill: -6725634915032820687
       Stat: 1935704731248357424
   mipmapLimitGroupName: 
