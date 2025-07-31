@@ -5,35 +5,51 @@ using UnityEngine;
 public class SetCard : MonoBehaviour
 {
     [Header("카드 프리팹")]
-    [SerializeField] GameObject skillCard;
-    [SerializeField] GameObject statCard_1;
-    [SerializeField] GameObject statCard_2;
+    [SerializeField] private GameObject _skillCard_Prefab;
+    [SerializeField] private GameObject _statCard_1_Prefab;
+    [SerializeField] private GameObject _statCard_2_Prefab;
 
     [Header("스킬 SO들")]
-    [SerializeField] SkillCardSO[] _skills;
+    [SerializeField] private SkillCardSO[] _skills;
 
     [Header("스탯 SO들")]
-    [SerializeField] StatCardSO[] _stats;
+    [SerializeField] private StatCardSO[] _stats;
 
-    private List<SkillCardSO> _skillDictionary = new List<SkillCardSO>();
-    private List<StatCardSO> _StatDictionary = new List<StatCardSO>();
-    private void CardSetting()
+    public Dictionary<Card, CardSetter> CardDictionary { get; private set; } = new Dictionary<Card, CardSetter>();
+
+    public void Awake()
     {
+        MakeCard();
         ChooseCard();
+    }
+
+    private void MakeCard()
+    {
+        CardDictionary.Add(Card.SkillCard, Instantiate(_skillCard_Prefab.GetComponent<CardSetter>(), transform));
+        CardDictionary.Add(Card.StatCard_1, Instantiate(_statCard_1_Prefab.GetComponent<CardSetter>(), transform));
+        CardDictionary.Add(Card.StatCard_2, Instantiate(_statCard_2_Prefab.GetComponent<CardSetter>(), transform));
     }
 
     private void ChooseCard()
     {
-        SkillCardSO _selectedSkill;
-        StatCardSO _selectedStat_1;
-        StatCardSO _selectedStat_2;
+        SkillCardSO selectedSkill;
+        StatCardSO selectedStat_1;
+        StatCardSO selectedStat_2;
 
-        _selectedSkill = _skillDictionary[Random.Range(0, _skillDictionary.Count)];
-        _selectedStat_1 = _StatDictionary[Random.Range(0, _StatDictionary.Count)];
+        selectedSkill = _skills[Random.Range(0, _skills.Length)];
+        selectedStat_1 = _stats[Random.Range(0, _stats.Length)];
         do
         {
-            _selectedStat_2 = _StatDictionary[Random.Range(0, _StatDictionary.Count)];
+            selectedStat_2 = _stats[Random.Range(0, _stats.Length)];
         }
-        while (_selectedStat_2 != _selectedStat_1);
+        while (selectedStat_2 != selectedStat_1);
+
+        CardSetting(selectedSkill, selectedStat_1, selectedStat_2);
+    }
+    private void CardSetting(SkillCardSO selectedSkill, StatCardSO selectedStat_1, StatCardSO selectedStat_2)
+    {
+        CardDictionary[Card.SkillCard].SetCard(selectedSkill);
+        CardDictionary[Card.StatCard_1].SetCard(selectedStat_1);
+        CardDictionary[Card.StatCard_2].SetCard(selectedStat_2);
     }
 }
