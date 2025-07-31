@@ -19,7 +19,11 @@ public class SkillManager : MonoBehaviour
 
     public void Add(SkillSO skillSo)
     {
-        SkillList.Add(skillSo);
+        if (!SkillList.Contains(skillSo))
+        {
+           skillSo.Initialize();
+           SkillList.Add(skillSo); 
+        }
     }
 
     private void Update()

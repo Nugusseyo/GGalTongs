@@ -7,13 +7,10 @@ public class TestUI : MonoBehaviour
 
     public void Click()
     {
-        if (SkillManager.Instance.SkillList.Count == 0)
+        SkillManager.Instance.Add(_skill);
+        if (SkillManager.Instance.SkillList != null)
         {
-            SkillManager.Instance.Add(_skill);
-        }
-        if (SkillManager.Instance.SkillList.Count == 1)
-        {
-            SkillManager.Instance.Add(_skill1);
+            _skill.Upgrade();
         }
     }
 }
