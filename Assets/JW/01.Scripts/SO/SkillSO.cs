@@ -9,6 +9,8 @@ public abstract class SkillSO : ScriptableObject
     public string Name;
     [Header("레벨 제한")]
     public int LevelLimit;
+    [Header("현재 레벨")]
+    public int CurrentLevel = 1;
     [Header("설명")]
     public string SkillDesc;
     [Header("쿨타임")] 
@@ -16,14 +18,15 @@ public abstract class SkillSO : ScriptableObject
 
     public float CurrentT;
 
-    protected virtual void Awake()
+    public virtual void Initialize()
     {
         CurrentT = CoolT;
+        CurrentLevel = 1;
     }
 
     protected abstract void Active();
-        
 
+    public abstract void Upgrade();
     public virtual void UpdateCoolT(float dt)
     {
         CurrentT -= dt;
