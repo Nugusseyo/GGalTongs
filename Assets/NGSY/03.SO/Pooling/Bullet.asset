@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dafcd8e75543e74fb5f29b3c0a90e99, type: 3}
-  m_Name: TestSkill 1
+  m_Script: {fileID: 11500000, guid: f13723c27f230504bbf210090aad1e20, type: 3}
+  m_Name: Bullet
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
-  Name: 
-  LevelLimit: 0
-  SkillDesc: 
-  CoolT: 3
-  CurrentT: 1.3069446
+  poolName: Bullet
+  prefab: {fileID: 5926158527141003926, guid: 87433371f1803e94498f3e8c70273a76, type: 3}
+  count: 50
