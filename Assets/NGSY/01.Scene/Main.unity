@@ -429,6 +429,7 @@ GameObject:
   - component: {fileID: 1355724962}
   - component: {fileID: 1355724961}
   - component: {fileID: 1355724963}
+  - component: {fileID: 1355724964}
   m_Layer: 0
   m_Name: ChinemaCamera
   m_TagString: Untagged
@@ -525,6 +526,30 @@ MonoBehaviour:
     Time: 0
     Smoothing: 0
     IgnoreY: 0
+--- !u!114 &1355724964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355724960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ApplyAfter: 2
+  ChannelMask: 1
+  Gain: 1
+  Use2DDistance: 1
+  UseCameraSpace: 1
+  SignalCombinationMode: 0
+  ReactionSettings:
+    m_SecondaryNoise: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    AmplitudeGain: 0.5
+    FrequencyGain: 3
+    Duration: 0.45
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!4 &1417829992 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4237404525291809990, guid: dcc3850a36045604fa5c6a762e53fed6, type: 3}
@@ -804,14 +829,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 802735537898652744, guid: 5541f363296b1f047b1fd6180fd4e971, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 96.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 802735537898652744, guid: 5541f363296b1f047b1fd6180fd4e971, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -211
-      objectReference: {fileID: 0}
     - target: {fileID: 8019827982306271219, guid: 5541f363296b1f047b1fd6180fd4e971, type: 3}
       propertyPath: m_Name
       value: Health
@@ -883,9 +900,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 1355724962}
   - {fileID: 619394802}
   - {fileID: 4682236611118447170}
   - {fileID: 1752593994}
   - {fileID: 1465263914}
-  - {fileID: 1355724962}
   - {fileID: 168423343}
