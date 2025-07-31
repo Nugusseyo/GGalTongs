@@ -1,14 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "SkillCardSO", menuName = "SO/SkillCardSO")]
 public class SkillCardSO : ScriptableObject
 {
     [Header("이름")]
-    public string SkillName;
+    public string Name;
     [Header("설명")]
     public string Desc;
     [Header("그림")]
-    public Sprite Sprite;
+    public Sprite Image;
     [Header("가지고 있는 카드 수")]
     public int Level;
     [Header("스킬SO")]
