@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "StatCardSO", menuName = "Scriptable Objects/StatCardSO")]
+[CreateAssetMenu(fileName = "StatCardSO", menuName = "CardSO/StatCardSO")]
 public class StatCardSO : ScriptableObject
 {
     [Header("¿Ã∏ß")]
