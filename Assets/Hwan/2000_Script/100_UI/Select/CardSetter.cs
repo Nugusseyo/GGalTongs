@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class CardSetter : MonoBehaviour
 {
+    [field: SerializeField] public bool IsSkill { get; private set; } = false;
+
     [field : SerializeField] public Image Image { get; private set; }
     [field: SerializeField] public TextMeshProUGUI Desc { get; private set; }
     [field: SerializeField] public TextMeshProUGUI Name { get; private set; }
