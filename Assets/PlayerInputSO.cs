@@ -29,9 +29,4 @@ public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerAction
         MovementKey = context.ReadValue<Vector2>();
         OnMoveKeyPress?.Invoke();
     }
-
-    public void OnAttack(InputAction.CallbackContext context)
-    {
-        Debug.Log("Attack!");
-    }
 }
