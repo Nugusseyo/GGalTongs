@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [CreateAssetMenu(fileName = "EnemyScanSkill", menuName = "SkillSO/EnemyScanSkill")]
 public class EnemyScanSkill : SkillSO
 {
