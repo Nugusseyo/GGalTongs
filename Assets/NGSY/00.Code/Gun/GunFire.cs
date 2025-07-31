@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GunFire : MonoBehaviour
 {
+    public UnityEvent shootEvent;
+    
     public static GunFire Instance;
     public float AttackSpeed { get; private set; }
     public float minusAttackSpeed;
@@ -37,8 +40,9 @@ public class GunFire : MonoBehaviour
 
     private IEnumerator BulletShot(float coolTime)
     {
-        PoolManager.Instance.Pop("Bullet");
         yield return new WaitForSeconds(coolTime);
+        PoolManager.Instance.Pop("Bullet");
+        shootEvent?.Invoke();
         StartCoroutine(BulletShot((AttackSpeed - minusAttackSpeed)/100));
     }
 }
