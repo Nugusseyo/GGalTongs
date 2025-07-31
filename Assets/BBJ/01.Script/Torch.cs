@@ -5,10 +5,11 @@ using UnityEngine.Rendering.Universal;
 
 public class Torch : MonoBehaviour
 {
+    [SerializeField] private float lightRadius => SlotManage.Instance.LightRadius;
+    [SerializeField] private float lifeTime => SlotManage.Instance.lifeTime;
     [SerializeField] private TextMeshPro lifeTimeText;
     [SerializeField] private CircleCollider2D lightBoundary;
-    [field: SerializeField] public float LightRadius { get; set;}
-    [field: SerializeField] public float lifeTime { get; private set; }
+    
     private Light2D light;
     public Slot CurrentSlot { get; private set; }
     private void Awake()
@@ -17,8 +18,8 @@ public class Torch : MonoBehaviour
     }
     private void OnEnable()
     {
-        light.pointLightOuterRadius = LightRadius;
-        lightBoundary.radius = LightRadius;
+        light.pointLightOuterRadius = lightRadius;
+        lightBoundary.radius = lightRadius;
         StartCoroutine(LifeTime());
     }
     private IEnumerator LifeTime()
@@ -45,7 +46,6 @@ public class Torch : MonoBehaviour
     {
         if (CurrentSlot == null)
         {
-            slot.SetActive(false);
             this.CurrentSlot = slot;
 
         }
@@ -54,7 +54,7 @@ public class Torch : MonoBehaviour
     {
         if (CurrentSlot != null)
         {
-            CurrentSlot.SetActive(true);
+            CurrentSlot.RemoveTorch();
             this.CurrentSlot = null;
         }
     }

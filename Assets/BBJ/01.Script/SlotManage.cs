@@ -3,22 +3,33 @@ using UnityEngine.InputSystem;
 
 public class SlotManage : MonoBehaviour
 {
-    [SerializeField] private GameObject torchPrefab;
+    public static SlotManage Instance { get; private set; }
+    [field: SerializeField] public float LightRadius { get; set; }
+    [field: SerializeField] public float lifeTime { get; set; }
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
     private void Update()
     {
-        if (TorchUi.Instance.TorchCount < 0) return;
+        if (TorchItemUi.Instance.CurretTorchItem <= 0) return;
 
         if(Keyboard.current.eKey.wasPressedThisFrame)
         {
             if(Slot.SelectSlot != null)
             {
-               GameObject torch = Instantiate(torchPrefab, Slot.SelectSlot.transform.position, Quaternion.identity);
-                if (torch.TryGetComponent(out Torch torchcompo))
-                {
-                    TorchUi.Instance.UseTorch(1);
-                    torchcompo.SetSlot(Slot.SelectSlot);
-                }
+                Slot.SelectSlot.InstallationTorch();
             }
+        }
+    }
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
         }
     }
 }
