@@ -8,8 +8,12 @@ public class GunFire : MonoBehaviour
     public float AttackSpeed { get; private set; }
     public float minusAttackSpeed;
 
+    private float _basePower = 10f;
+    public float AttackPower { get; private set; }
+    
     private void Awake()
     {
+        AttackPower = _basePower;
         AttackSpeed = 200;
         if (Instance == null)
         {
@@ -26,9 +30,14 @@ public class GunFire : MonoBehaviour
         StartCoroutine(BulletShot(AttackSpeed / 100));
     }
 
+    public void BulletPowerUp(float power)
+    {
+        AttackPower = _basePower + power;
+    }
+
     private IEnumerator BulletShot(float coolTime)
     {
-        IPoolable bullet = PoolManager.Instance.Pop("Bullet");
+        PoolManager.Instance.Pop("Bullet");
         yield return new WaitForSeconds(coolTime);
         StartCoroutine(BulletShot((AttackSpeed - minusAttackSpeed)/100));
     }
