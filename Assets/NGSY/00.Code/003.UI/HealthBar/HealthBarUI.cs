@@ -1,36 +1,81 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
 public class HealthBarUI : MonoBehaviour
 {
-    private float scale;
-    public RectTransform hpBar;
-    public float maxHealth = 25;
+    public static HealthBarUI Instance;
+
+    [SerializeField] private TextMeshProUGUI _healthText;
+    [SerializeField] private RectTransform hpBar;
+
+    public float MaxHealth { get; private set; }
     private float curHealth;
-    private Vector2 barSize;
+    private float maxBarWidth;
+    private float targetRatio = 1f;
 
     private void Awake()
     {
-        curHealth = maxHealth;
-        barSize = hpBar.sizeDelta;
-        barSize.x = (100 / maxHealth) * 5 - (float)0.7;
-        hpBar.sizeDelta = barSize;
-        UpdateHealthBar(maxHealth);
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+
+        MaxHealth = 25;
+        curHealth = MaxHealth;
+        maxBarWidth = hpBar.sizeDelta.x;
+        UpdateHealthBar(curHealth);
     }
-    public void UpdateHealthBar(float health)
+
+    private void UpdateHealthBar(float health)
     {
-        scale = Mathf.Clamp(health * 1, 0, maxHealth);
+        targetRatio = Mathf.Clamp01(health / MaxHealth);
+        _healthText.text = $"{(int)curHealth} / {(int)MaxHealth}";
+    }
+
+    public void PlusMaxHealth(float value)
+    {
+        MaxHealth += value;
+        curHealth += value;
+        UpdateHealthBar(curHealth);
+    }
+
+    public void PlayerDamaged(float amount)
+    {
+        curHealth = Mathf.Clamp(curHealth - amount, 0, MaxHealth);
+        UpdateHealthBar(curHealth);
+    }
+
+    public void PlusCurrentHealth(float value)
+    {
+        curHealth = Mathf.Clamp(curHealth + value, 0, MaxHealth);
+        UpdateHealthBar(curHealth);
     }
 
     private void Update()
     {
+        float currentWidth = hpBar.sizeDelta.x;
+        float targetWidth = maxBarWidth * targetRatio;
+
+        float smoothedWidth = Mathf.Lerp(currentWidth, targetWidth, Time.deltaTime * 10f); // 속도는 조절 가능
+
+        Vector2 newSize = hpBar.sizeDelta;
+        newSize.x = smoothedWidth;
+        hpBar.sizeDelta = newSize;
         if (Keyboard.current.qKey.wasPressedThisFrame)
         {
-            curHealth--;
-            UpdateHealthBar(curHealth);
-            Debug.Log(curHealth);
+            PlusMaxHealth(6);
         }
-        hpBar.localScale = Vector2.Lerp(hpBar.localScale, new Vector2(scale, hpBar.localScale.y), Time.deltaTime * 8);
+
+        if (Keyboard.current.eKey.wasPressedThisFrame)
+        {
+            PlayerDamaged(3);
+        }
+
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            PlusCurrentHealth(5);
+        }
     }
 }
