@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class GunFire : MonoBehaviour
 {
+    public PlayerInputSO playerInput;
     public UnityEvent shootEvent;
     
     public static GunFire Instance;
@@ -41,17 +42,20 @@ public class GunFire : MonoBehaviour
     private IEnumerator BulletShot(float coolTime)
     {
         yield return new WaitForSeconds(coolTime);
-        IPoolable bullet = PoolManager.Instance.Pop("Bullet");
-        GameObject bulletGO = bullet.GameObject;
-        
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
+        if (!playerInput.isGamePaused)
+        {
+            IPoolable bullet = PoolManager.Instance.Pop("Bullet");
+            GameObject bulletGO = bullet.GameObject;
+            
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0;
 
-        Vector3 direction = (mousePos - bulletGO.transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        bulletGO.transform.rotation = Quaternion.Euler(0, 0, angle - 270);
-        
-        shootEvent?.Invoke();
+            Vector3 direction = (mousePos - bulletGO.transform.position).normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            bulletGO.transform.rotation = Quaternion.Euler(0, 0, angle - 270);
+            
+            shootEvent?.Invoke();
+        }
         StartCoroutine(BulletShot((AttackSpeed - minusAttackSpeed)/100));
     }
 }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd3a956153f4fed83d8cf7e0fb7ae91, type: 3}
+  m_Name: BackGroundAudioClips
+  m_EditorClassIdentifier: 
+  ShotAudioClips:
+  - {fileID: 8300000, guid: 89225c0a731d4114bb15ad4dc7067768, type: 3}
+  - {fileID: 8300000, guid: 232df0b8882c7d34ca9607bd847d0e84, type: 3}
+  - {fileID: 8300000, guid: 2a3bfbf9f4ac0bf42a3b197e694b105e, type: 3}
+  - {fileID: 8300000, guid: dd5be765bdea8484db3f6e4fd9557ca4, type: 3}
