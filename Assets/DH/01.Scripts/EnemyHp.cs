@@ -20,7 +20,6 @@ public class EnemyHP : MonoBehaviour
     public void TakeDamage(float amount)
     {
         CurrentHp = Mathf.Clamp(CurrentHp - amount, 0f, MaxHp);
-        Debug.Log($"남은 HP: {CurrentHp}/{MaxHp}");
 
         if (healthBarPrefab != null)
             healthBarPrefab.SetFill(CurrentHp / MaxHp);
@@ -36,6 +35,11 @@ public class EnemyHP : MonoBehaviour
         if (healthBarPrefab != null)
             Destroy(healthBarPrefab.gameObject);
 
+        if (ExpManager.Instance != null)
+        {
+            ExpManager.Instance.ExpUp((int)MaxHp / 10);
+            Debug.Log("Exp " + MaxHp/10);
+        }
         Destroy(gameObject);
     }
 

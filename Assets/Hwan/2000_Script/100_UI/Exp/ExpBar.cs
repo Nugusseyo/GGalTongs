@@ -1,35 +1,32 @@
+using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class ExpBar : MonoBehaviour
 {
-    private float scale;
-    public RectTransform hpBar;
-    public float maxHealth = 25;
-    private float curHealth;
-    private Vector2 barSize;
+    public RectTransform expBar;
+    private float _targetRatio;
 
-    private void Awake()
+    public void GrowingExpBar()
     {
-        curHealth = maxHealth;
-        barSize = hpBar.sizeDelta;
-        barSize.x = (100 / maxHealth) * 5 - (float)0.7;
-        hpBar.sizeDelta = barSize;
-        UpdateHealthBar(maxHealth);
+        _targetRatio = Mathf.Clamp01((float)ExpManager.Instance.currentExp / ExpManager.Instance.goalExp); // 0 ~ 1 사이로 제한
+        Debug.Log($"trati{_targetRatio}, curexp{ExpManager.Instance.currentExp}, goalExp{ExpManager.Instance.goalExp}");
     }
-    public void UpdateHealthBar(float health)
+
+    public void ResetExpBar()
     {
-        scale = Mathf.Clamp(health * 1, 0, maxHealth);
+        _targetRatio = 0;
     }
 
     private void Update()
     {
-        if (Keyboard.current.qKey.wasPressedThisFrame)
-        {
-            curHealth--;
-            UpdateHealthBar(curHealth);
-            Debug.Log(curHealth);
-        }
-        hpBar.localScale = Vector2.Lerp(hpBar.localScale, new Vector2(scale, hpBar.localScale.y), Time.unscaledDeltaTime * 8);
+        float currentWidth = expBar.sizeDelta.x;
+        float targetWidth = 2000 * _targetRatio;
+
+        float smoothedWidth = Mathf.Lerp(currentWidth, targetWidth, Time.deltaTime * 10f);
+        
+        Vector2 size = expBar.sizeDelta;
+        size.x = smoothedWidth;
+        expBar.sizeDelta = size;
     }
 }
