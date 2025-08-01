@@ -7,12 +7,17 @@ using UnityEngine.SceneManagement;
 
 public class SkillManager : MonoBehaviour
 {
+    [SerializeField] private List<SkillSO> skills;
     public List<SkillSO> SkillList = new List<SkillSO>();
     private float _time;
     public static SkillManager Instance;
 
     private void Awake()
     {
+        foreach (var skill in skills)
+        {
+            skill.Initialize();
+        }
         if (Instance == null)
         {
             Instance = this;
@@ -25,7 +30,6 @@ public class SkillManager : MonoBehaviour
         {
            skillSo.Initialize();
            skillSo.ResetSkillData();
-           skillSo.CurrentLevel = 1;
            
            SkillList.Add(skillSo); 
         }
