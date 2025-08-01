@@ -1,4 +1,7 @@
+using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SelectMove : MonoBehaviour
 {
@@ -22,13 +25,24 @@ public class SelectMove : MonoBehaviour
     private int _moveDir = 1;
 
     [SerializeField] private float _stopTargetY = 0f;
+
+    private Coroutine coroutine;
+
+    private Button button;
+
     private void Awake()
     {
+        Animator anim = GetComponent<Animator>();
+        anim.updateMode = AnimatorUpdateMode.UnscaledTime;
+
         _rectT = GetComponent<RectTransform>();
+
+        button = GetComponent<Button>();
     }
 
     public void MoveStart()
     {
+        button.interactable = false;
         _nowSpeed = _spinSpeed;
         _canMove = true;
         _moving = true;
@@ -43,11 +57,11 @@ public class SelectMove : MonoBehaviour
         if (_canMove)
         {
             // 움직이기
-            _rectT.anchoredPosition -= new Vector2(0, _nowSpeed) * Time.deltaTime * _moveDir;
+            _rectT.anchoredPosition -= new Vector2(0, _nowSpeed) * Time.unscaledDeltaTime * _moveDir;
 
             if (_stoping)
             {
-                _currentStopTime += Time.deltaTime;
+                _currentStopTime += Time.unscaledDeltaTime;
                 float t = Mathf.Clamp01(_currentStopTime / _stopTime);
                 _nowSpeed = Mathf.Lerp(_spinSpeed, _slowValue, t);
 
@@ -72,23 +86,24 @@ public class SelectMove : MonoBehaviour
                 _canMove = false;
                 _moving = false;
                 _ending = false;
-            }
-        }
-
-        // 입력 처리
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (!_moving)
-            {
-                MoveStart();
-            }
-            else
-            {
-                _stoping = true;
+                button.interactable = false;
             }
         }
 
         WarpCheck();
+    }
+
+    public void StartMove()
+    {
+        if (!_moving && coroutine == null)
+        {
+            MoveStart();
+        }
+        else if (coroutine == null)
+        {
+            _stoping = true;
+            coroutine = StartCoroutine(GoHome());
+        }
     }
 
     private void WarpCheck()
@@ -97,5 +112,16 @@ public class SelectMove : MonoBehaviour
         {
             _rectT.anchoredPosition = new Vector2(_rectT.anchoredPosition.x, 1080);
         }
+    }
+
+    private IEnumerator GoHome()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        _rectT.anchoredPosition = new Vector2(_rectT.anchoredPosition.x, _stopTargetY);
+        _canMove = false;
+        _moving = false;
+        _ending = false;
+        coroutine = null;
+        button.interactable = false;
     }
 }

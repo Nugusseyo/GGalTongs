@@ -40,7 +40,7 @@ public class EnemyHP : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
-            TakeDamage(1f);
+            TakeDamage(GunFire.Instance.AttackPower);
             Destroy(other.gameObject);
         }
     }

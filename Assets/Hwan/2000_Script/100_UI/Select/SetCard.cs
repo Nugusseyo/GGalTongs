@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SetCard : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class SetCard : MonoBehaviour
         MakeCard();
         ChooseCard();
         MoveCard();
+
+        gameObject.SetActive(false);
     }
 
     private void MakeCard()
@@ -39,17 +42,17 @@ public class SetCard : MonoBehaviour
         CardDictionary.Add(9, Instantiate(_statCard_2_Prefab.GetComponent<CardSetter>(), CardDictionary[3].transform));
     }
 
-    private void ChooseCard()
+    public void ChooseCard()
     {
         for (int i = 1; i <= 3; i++)
         {
             int s2 = 0;
             int s3 = 1;
 
-            CardDictionary[1 + ((i - 1) * 2)].SetCard(_skills[Random.Range(0, _skills.Length)]);
+            CardDictionary[1 + ((i - 1) * 3)].SetCard(_skills[Random.Range(0, _skills.Length)]);
 
             s2 = Random.Range(0, _stats.Length);
-            CardDictionary[2 + ((i - 1) * 2)].SetCard(_stats[s2]);
+            CardDictionary[2 + ((i - 1) * 3)].SetCard(_stats[s2]);
             do
             {
                 s3 = Random.Range(0, _stats.Length);
@@ -61,10 +64,17 @@ public class SetCard : MonoBehaviour
 
     private void MoveCard()
     {
+        for (int i = 1; i <= 3; i++)
+        {
+            GetComponent<MoveStarter>().MoveStart += CardDictionary[i].GetComponent<SelectMove>().StartMove;
+            CardDictionary[i].GetComponent<Button>().interactable = false;
+        }
+
+
         for (int i = 4; i <= CardDictionary.Count; i++)
         {
             CardDictionary[i].GetComponent<RectTransform>().localScale = Vector3.one;
-            CardDictionary[i].GetComponent<SelectMove>().enabled = false;
+            Destroy(CardDictionary[i].GetComponent<SelectMove>());
         }
         CardDictionary[4].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 1080);
         CardDictionary[5].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 1080);
@@ -73,5 +83,10 @@ public class SetCard : MonoBehaviour
         CardDictionary[7].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -1080);
         CardDictionary[8].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -1080);
         CardDictionary[9].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -1080);
+    }
+
+    private void OnEnable()
+    {
+        ChooseCard();
     }
 }
