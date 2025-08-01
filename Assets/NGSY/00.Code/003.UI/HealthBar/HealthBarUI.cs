@@ -73,19 +73,5 @@ public class HealthBarUI : MonoBehaviour
         Vector2 newSize = hpBar.sizeDelta;
         newSize.x = smoothedWidth;
         hpBar.sizeDelta = newSize;
-        if (Keyboard.current.qKey.wasPressedThisFrame)
-        {
-            PlusMaxHealth(6);
-        }
-
-        if (Keyboard.current.eKey.wasPressedThisFrame)
-        {
-            PlayerDamaged(3);
-        }
-
-        if (Keyboard.current.rKey.wasPressedThisFrame)
-        {
-            PlusCurrentHealth(5);
-        }
     }
 }

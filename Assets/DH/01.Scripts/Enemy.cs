@@ -54,6 +54,15 @@ public class Enemy : MonoBehaviour, IPoolable
         _attacking = false; 
     }
 
+    private void OnDestroy()
+    {
+        float ran = Random.Range(0, 100);
+        if (ran < 7)
+        {
+            TorchItemUi.Instance.AddTorchItme(1);
+        }
+    }
+
     public string ItemName => gameObject.name;
     public GameObject GameObject => gameObject;
     public void ResetItem()
