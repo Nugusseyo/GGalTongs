@@ -104,13 +104,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7283840799512449736}
   m_Father: {fileID: 245173411691076209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -180}
-  m_SizeDelta: {x: 285, y: 175}
+  m_SizeDelta: {x: 280, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &446184876383355446
 CanvasRenderer:
@@ -321,7 +322,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 140}
-  m_SizeDelta: {x: 285, y: 250}
+  m_SizeDelta: {x: 278, y: 252}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7265224086003112685
 CanvasRenderer:
@@ -527,11 +528,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 245173411691076209}
+  m_Father: {fileID: 1489881487402451809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0001, y: -180.38403}
+  m_AnchoredPosition: {x: -0.0001, y: -0.3840332}
   m_SizeDelta: {x: 231.5648, y: 120.7681}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2978906112547670526
@@ -644,9 +645,8 @@ GameObject:
   - component: {fileID: 245173411691076209}
   - component: {fileID: 2800867403653849543}
   - component: {fileID: 6988399905331134477}
-  - component: {fileID: 6735727171934919385}
   - component: {fileID: -1630151833994638526}
-  - component: {fileID: 6683523507615369987}
+  - component: {fileID: 540703051626454865}
   m_Layer: 5
   m_Name: SkillIn
   m_TagString: Untagged
@@ -663,20 +663,19 @@ RectTransform:
   m_GameObject: {fileID: 5374363719572201548}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8684973543940257588}
   - {fileID: 4378180398297543458}
   - {fileID: 1489881487402451809}
-  - {fileID: 7283840799512449736}
   - {fileID: 2142570006694418312}
   - {fileID: 3602180067942763973}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -238, y: 60}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 316, y: 569}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2800867403653849543
@@ -704,50 +703,7 @@ MonoBehaviour:
   <Desc>k__BackingField: {fileID: 6866710535406294122}
   <Name>k__BackingField: {fileID: 2927623382291829375}
   <Level>k__BackingField: {fileID: 4694188490885263563}
---- !u!114 &6735727171934919385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5374363719572201548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
+  _nowSkill: {fileID: 0}
 --- !u!95 &-1630151833994638526
 Animator:
   serializedVersion: 7
@@ -770,7 +726,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6683523507615369987
+--- !u!114 &540703051626454865
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -779,7 +735,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5374363719572201548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37bc4f360329a9941b9919fb71298f41, type: 3}
+  m_Script: {fileID: 11500000, guid: 87eb8b7c48c1daf4f8e0df505160f4dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 1
+  _isNotS: 0
+  _stopTargetY: 0
+  _speed: 17500
+  _interval: 1
+  _cardSetter: {fileID: 6988399905331134477, guid: 2f77d473265478846ba5ece3e1ec1d31, type: 3}
+  _mode: 0

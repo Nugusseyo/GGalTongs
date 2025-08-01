@@ -18,6 +18,8 @@ public class SetCard : MonoBehaviour
 
     public Dictionary<int, CardSetter> CardDictionary { get; private set; } = new Dictionary<int, CardSetter>();
 
+    [SerializeField] private RectTransform _range;
+
     public void Awake()
     {
         foreach (StatCardSO SO in _stats)
@@ -30,21 +32,22 @@ public class SetCard : MonoBehaviour
         MoveCard();
 
         gameObject.SetActive(false);
+
     }
 
     private void MakeCard()
     {
-        CardDictionary.Add(1, Instantiate(_skillCard_Prefab.GetComponent<CardSetter>(), transform));
-        CardDictionary.Add(2, Instantiate(_statCard_1_Prefab.GetComponent<CardSetter>(), transform));
-        CardDictionary.Add(3, Instantiate(_statCard_2_Prefab.GetComponent<CardSetter>(), transform));
+        CardDictionary.Add(1, Instantiate(_skillCard_Prefab, _range).GetComponent<CardSetter>());
+        CardDictionary.Add(2, Instantiate(_statCard_1_Prefab, transform).GetComponent<CardSetter>());
+        CardDictionary.Add(3, Instantiate(_statCard_2_Prefab, transform).GetComponent<CardSetter>());
 
-        CardDictionary.Add(4, Instantiate(_skillCard_Prefab.GetComponent<CardSetter>(), CardDictionary[1].transform));
-        CardDictionary.Add(5, Instantiate(_statCard_1_Prefab.GetComponent<CardSetter>(), CardDictionary[2].transform));
-        CardDictionary.Add(6, Instantiate(_statCard_2_Prefab.GetComponent<CardSetter>(), CardDictionary[3].transform));
+        CardDictionary.Add(4, Instantiate(_skillCard_Prefab, CardDictionary[1].transform).GetComponent<CardSetter>());
+        CardDictionary.Add(5, Instantiate(_statCard_1_Prefab, CardDictionary[2].transform).GetComponent<CardSetter>());
+        CardDictionary.Add(6, Instantiate(_statCard_2_Prefab, CardDictionary[3].transform).GetComponent<CardSetter>());
 
-        CardDictionary.Add(7, Instantiate(_skillCard_Prefab.GetComponent<CardSetter>(), CardDictionary[1].transform));
-        CardDictionary.Add(8, Instantiate(_statCard_1_Prefab.GetComponent<CardSetter>(), CardDictionary[2].transform));
-        CardDictionary.Add(9, Instantiate(_statCard_2_Prefab.GetComponent<CardSetter>(), CardDictionary[3].transform));
+        CardDictionary.Add(7, Instantiate(_skillCard_Prefab, CardDictionary[1].transform).GetComponent<CardSetter>());
+        CardDictionary.Add(8, Instantiate(_statCard_1_Prefab, CardDictionary[2].transform).GetComponent<CardSetter>());
+        CardDictionary.Add(9, Instantiate(_statCard_2_Prefab, CardDictionary[3].transform).GetComponent<CardSetter>());
     }
 
     private void Update()
@@ -60,7 +63,7 @@ public class SetCard : MonoBehaviour
         {
             int s2 = 0;
             int s3 = 1;
-            Debug.Log(CardDictionary[1]);
+
             CardDictionary[1 + ((i - 1) * 3)].SetCard(_skills[Random.Range(0, _skills.Length)]);
 
             s2 = Random.Range(0, _stats.Length);
@@ -99,7 +102,7 @@ public class SetCard : MonoBehaviour
 
     public void ButtonInter(bool boo)
     {
-        for (int i = 1; i <= 3; i++)
+        for (int i = 2; i <= 3; i++)
         {
             CardDictionary[i].GetComponent<Button>().interactable = boo;
         }

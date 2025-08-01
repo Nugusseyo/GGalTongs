@@ -16,17 +16,24 @@ public class CardSetter : MonoBehaviour
 
     public Action Use { get; private set; }
 
-    private SkillSO _nowSkill;
+    public SkillSO _nowSkill;
     private StatCardSO _nowStat;
+
+    [SerializeField] private bool _isInside = true;
 
     public void SetCard(SkillSO skill)
     {
         _nowSkill = skill;
 
-        Image.sprite = skill.Icon;
-        Desc.text = skill.SkillDesc;
-        Name.text = skill.Name;
-        Level.text = $"���� : {skill.CurrentLevel}";
+
+        if (_isInside)
+        {
+            Image.sprite = skill.Icon;
+            Desc.text = skill.SkillDesc;
+            Name.text = skill.Name;
+            Level.text = $"���� : {skill.CurrentLevel}";
+        }
+
         Use = () =>
         {
             if (SkillManager.Instance.SkillList.Contains(skill))

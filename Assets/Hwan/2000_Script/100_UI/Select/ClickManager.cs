@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ClickManager : MonoBehaviour
 {
+
     private Button button;
     private CardSetter setter;
 
@@ -12,12 +13,14 @@ public class ClickManager : MonoBehaviour
     private void Awake()
     {
         button = GetComponent<Button>();
-        setter = GetComponent<CardSetter>();
 
         button.onClick.AddListener(() => setter.Use());
         button.onClick.AddListener(() => setter.Refresh());
         button.onClick.AddListener(() => StartCoroutine(Close()));
         button.onClick.AddListener(() => FindAnyObjectByType<SetCard>().ButtonInter(false));
+        
+
+        setter = GetComponent<CardSetter>();
     }
 
     private IEnumerator Close()

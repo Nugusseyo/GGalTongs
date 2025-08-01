@@ -769,6 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87eb8b7c48c1daf4f8e0df505160f4dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isNotS: 1
   _stopTargetY: 300
   _speed: 17500
   _interval: 1.5
@@ -785,6 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bc4f360329a9941b9919fb71298f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isNotS: 1
   waitTime: 1
 --- !u!1 &7959940074028469878
 GameObject:

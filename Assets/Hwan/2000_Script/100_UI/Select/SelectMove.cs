@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SelectMove : MonoBehaviour
 {
+    [SerializeField] private bool _isNotS = true;
+
     private RectTransform _rectT;
 
     [SerializeField] private float _stopTargetY = 0f;
@@ -16,11 +18,19 @@ public class SelectMove : MonoBehaviour
 
     private Coroutine stopCo;
 
+    [SerializeField] private CardSetter _cardSetter;
+
+    [SerializeField] private CardMoveMode _mode = CardMoveMode.Stoped;
     private void Awake()
     {
+        _cardSetter = GameObject.Find("Skill").GetComponent<CardSetter>();
+
         _rectT = GetComponent<RectTransform>();
 
-        button = GetComponent<Button>();
+        if ( _isNotS)
+        {
+            button = GetComponent<Button>();
+        }
     }
 
     public void ChangeMode(int value)
@@ -28,19 +38,28 @@ public class SelectMove : MonoBehaviour
         _mode = (CardMoveMode)value;
         if (_mode == CardMoveMode.Stoped)
         {
-            button.interactable = true;
+            StopMethod();
         }
     }
+
     public void ChangeMode()
     {
         _mode++;
         if (_mode == CardMoveMode.Stoped)
         {
-            button.interactable = true;
+            StopMethod();
+        }
+    }
+    private void StopMethod()
+    {
+        if (_isNotS) button.interactable = true;
+        else
+        {
+            _cardSetter.SetCard(GetComponent<CardSetter>()._nowSkill);
+            _cardSetter.GetComponent<Button>().interactable = true;
         }
     }
 
-    [SerializeField] private CardMoveMode _mode = CardMoveMode.Stoped;
 
     private void Update()
     {
@@ -54,7 +73,8 @@ public class SelectMove : MonoBehaviour
                 {
                     stopCo = StartCoroutine(StopCo());
                 }
-                button.interactable = false;
+                if( _isNotS) button.interactable = false;
+                else _cardSetter.GetComponent<Button>().interactable = true;
                 _rectT.anchoredPosition -= new Vector2(0, _speed) * Time.unscaledDeltaTime;
                 break;
         }
