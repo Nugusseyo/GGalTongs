@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -12,9 +13,7 @@ public class CardSetter : MonoBehaviour
     [field: SerializeField] public TextMeshProUGUI Name { get; private set; }
     [field: SerializeField] public TextMeshProUGUI Level { get; private set; }
 
-    public SkillSO Skill { get; private set; }
-
-    public PlayerStat Stat { get; private set; }
+    public Action Use { get; private set; }
 
     public void SetCard(SkillSO skill)
     {
@@ -22,7 +21,14 @@ public class CardSetter : MonoBehaviour
         Desc.text = skill.SkillDesc;
         Name.text = skill.Name;
         Level.text = $"레벨 : {skill.CurrentLevel}";
-        Skill = skill;
+        Use = () =>
+        {
+            SkillManager.Instance.Add(skill);
+            if (SkillManager.Instance.SkillList.Contains(skill))
+            {
+                skill.Upgrade();
+            }
+        };
     }
     public void SetCard(StatCardSO stat)
     {
@@ -30,6 +36,6 @@ public class CardSetter : MonoBehaviour
         Desc.text = stat.Desc;
         Name.text = stat.Name;
         Level.text = $"레벨 : {stat.Level}";
-        Stat = stat.Stat;
+        Use = stat.Apply;
     }
 }

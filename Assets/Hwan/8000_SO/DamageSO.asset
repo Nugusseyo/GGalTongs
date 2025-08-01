@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: DamageSO
   m_EditorClassIdentifier: 
   Name: "\uB370\uBBF8\uC9C0"
-  Desc: "\uC124\uBA85"
+  Desc: "\uB370\uBBF8\uC9C0 +1"
   Image: {fileID: -5257656354007605394, guid: 171b393d18340444295cf27fbec596c6, type: 3}
   Level: 0
   Stat: 0
-  BonusValue: 0
+  BonusValue: 1

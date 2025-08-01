@@ -30,6 +30,6 @@ public class ExpBar : MonoBehaviour
             UpdateHealthBar(curHealth);
             Debug.Log(curHealth);
         }
-        hpBar.localScale = Vector2.Lerp(hpBar.localScale, new Vector2(scale, hpBar.localScale.y), Time.deltaTime * 8);
+        hpBar.localScale = Vector2.Lerp(hpBar.localScale, new Vector2(scale, hpBar.localScale.y), Time.unscaledDeltaTime * 8);
     }
 }
