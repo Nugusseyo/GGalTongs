@@ -2653,6 +2653,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &697540914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7142562848050401184, guid: 61acc45805081364f8a8f1665856f6ef, type: 3}
+  m_PrefabInstance: {fileID: 1034943969}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37bc4f360329a9941b9919fb71298f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &724201341 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1140853279133284397, guid: a14bc7f05c940024bacec83e1384e74c, type: 3}
@@ -3758,6 +3769,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2891547400591259357, guid: 61acc45805081364f8a8f1665856f6ef, type: 3}
+      propertyPath: _clickM
+      value: 
+      objectReference: {fileID: 697540914}
     - target: {fileID: 3605881060949880223, guid: 61acc45805081364f8a8f1665856f6ef, type: 3}
       propertyPath: m_Pivot.x
       value: 0
