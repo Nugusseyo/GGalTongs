@@ -16,26 +16,15 @@ public class MoveStarter : MonoBehaviour
         setCard = GetComponent<SetCard>();
     }
 
-    void Update()
-    {
-        if (CanInput == true && Input.GetKeyDown(KeyCode.Y))
-        {
-            MoveStart?.Invoke();
-
-            CanInput = false;
-        }
-    }
-
     private void OnEnable()
     {
-        StartCoroutine(ChangeCard());
+        ChangeCard();
     }
 
-    private IEnumerator ChangeCard()
+    private void ChangeCard()
     {
         CanInput = true;
         MoveStart?.Invoke();
-        yield return new WaitForSecondsRealtime(0.5f);
         setCard.ChooseCard();
     }
 }

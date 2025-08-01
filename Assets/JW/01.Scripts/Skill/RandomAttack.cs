@@ -23,16 +23,7 @@ public class RandomAttack : SkillSO
     public override void ResetSkillData()
     {
         base.ResetSkillData();
-        CurrentLevel = 1;
         ActiveCount = CurrentLevel;
-        Debug.Log("Reset");
-    }
-
-    protected override void ResetSkillData()
-    {
-        base.ResetSkillData();
-        ActiveCount = CurrentLevel;
-        Debug.Log("Reset");
     }
 
     protected override void Active()

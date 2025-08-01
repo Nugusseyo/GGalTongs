@@ -8,8 +8,6 @@ public class SelectManager : MonoBehaviour
 {
     public static SelectManager Instance { get; private set; }
 
-    private Action StartSelect;
-
     [SerializeField] private GameObject selectUI;
     private SetCard setCard;
 
@@ -25,8 +23,6 @@ public class SelectManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        StartSelect += OpenUI;
-
         setCard = selectUI.GetComponent<SetCard>();
     }
 
@@ -34,11 +30,11 @@ public class SelectManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.T))
         {
-            StartSelect?.Invoke();
+            OpenUI();
         }
     }
 
-    private void OpenUI()
+    public void OpenUI()
     {
         if (Time.timeScale != 0)
         {
