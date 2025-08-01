@@ -15,9 +15,27 @@ public class EnemyHP : MonoBehaviour
         }
     }
 
+
+    public float xpOnDeath = 30f;
+
+
+    public ExperienceBarController xpBar;
+
     void Awake()
     {
         CurrentHp = MaxHp;
+    }
+
+    void Start()
+    {
+        if (xpBar == null)
+        {
+            xpBar = FindObjectOfType<ExperienceBarController>();
+            if (xpBar == null)
+            {
+
+            }
+        }
     }
 
     public void TakeDamage(float amount)
@@ -33,9 +51,14 @@ public class EnemyHP : MonoBehaviour
 
     private void Die()
     {
+        if (xpBar != null)
+        {
+            xpBar.AddXP(xpOnDeath);
+        }
+
         Destroy(gameObject);
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Bullet"))
