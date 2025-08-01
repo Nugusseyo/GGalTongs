@@ -23,6 +23,7 @@ public class RandomAttack : SkillSO
     public override void ResetSkillData()
     {
         base.ResetSkillData();
+        CurrentLevel = 0;
         ActiveCount = CurrentLevel;
     }
 
@@ -32,7 +33,6 @@ public class RandomAttack : SkillSO
         {
             //사운드 재생 1
             RandomAttackLogic.Instance?.UseSkill();
-            Debug.Log(i);
         }
     }
     

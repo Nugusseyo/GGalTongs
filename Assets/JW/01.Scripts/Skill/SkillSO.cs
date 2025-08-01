@@ -24,6 +24,7 @@ public abstract class SkillSO : ScriptableObject
     
     public virtual void Initialize()
     {
+        CurrentLevel = 0;
         Debug.Log("Initialize");
         CurrentCoolT = CoolT;
         if (!_isSubs)
@@ -36,6 +37,7 @@ public abstract class SkillSO : ScriptableObject
     public virtual void ResetSkillData()
     {
         CurrentLevel = 0;
+        Debug.Log("Reset");
         CurrentCoolT = CoolT;
     }
     

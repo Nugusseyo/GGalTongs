@@ -31,7 +31,9 @@ public class SkillManager : MonoBehaviour
            skillSo.Initialize();
            skillSo.ResetSkillData();
            
-           SkillList.Add(skillSo); 
+           SkillList.Add(skillSo);
+
+           skillSo.CurrentLevel = 1;
         }
     }
 
