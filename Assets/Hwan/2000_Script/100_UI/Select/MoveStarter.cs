@@ -7,11 +7,9 @@ public class MoveStarter : MonoBehaviour
 {
     public Action MoveStart { get; set; }
 
-    public bool CanInput = false;
+    private bool CanInput = false;
 
     private SetCard setCard;
-
-    private int count = 0;
 
     private void Awake()
     {
@@ -23,25 +21,20 @@ public class MoveStarter : MonoBehaviour
         if (CanInput == true && Input.GetKeyDown(KeyCode.Y))
         {
             MoveStart?.Invoke();
-            count++;
-            if (count <= 1)
-            {
-                StartCoroutine(ChangeCard());
-            }
-            if (count >= 2)
-            {
-                CanInput = false;
-            }
+
+            CanInput = false;
         }
     }
 
     private void OnEnable()
     {
-        CanInput = true;
+        StartCoroutine(ChangeCard());
     }
 
     private IEnumerator ChangeCard()
     {
+        CanInput = true;
+        MoveStart?.Invoke();
         yield return new WaitForSecondsRealtime(0.5f);
         setCard.ChooseCard();
     }

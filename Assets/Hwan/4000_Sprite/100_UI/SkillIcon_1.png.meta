@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: c862ab995361fe24ca781068c236cec0
+guid: 6fc00bb94f5202746b1138a69058f18c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6990061210014496370
-    second: dd_0
+      213: -8364529713028816482
+    second: SkillIcon_1_0
   - first:
-      213: -8211820065568826686
-    second: dd_1
+      213: -2329041686176630129
+    second: SkillIcon_1_1
   - first:
-      213: -5128203354079655686
-    second: dd_2
+      213: -3527868426062826577
+    second: SkillIcon_1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,12 +52,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.3663664, y: 0.5037286}
-  spritePixelsToUnits: 30
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 2
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +78,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -106,67 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dd_0
+      name: SkillIcon_1_0
       rect:
         serializedVersion: 2
         x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e91a7bd0b883beb80800000000000000
+      internalID: -8364529713028816482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillIcon_1_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8a7d5c1de49dafd0800000000000000
+      internalID: -2329041686176630129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkillIcon_1_2
+      rect:
+        serializedVersion: 2
+        x: 32
         y: 0
-        width: 124
-        height: 261
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 276b625b2afa10160800000000000000
-      internalID: 6990061210014496370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dd_1
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 207
-        width: 34
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ca58509821c90e80800000000000000
-      internalID: -8211820065568826686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dd_2
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 31
-        width: 210
-        height: 114
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af88d184836f4d8b0800000000000000
-      internalID: -5128203354079655686
+      spriteID: fa37532ab5e7a0fc0800000000000000
+      internalID: -3527868426062826577
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 154300261fa305e46948fd1c834bdb7e
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -185,9 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dd_0: 6990061210014496370
-      dd_1: -8211820065568826686
-      dd_2: -5128203354079655686
+      SkillIcon_1_0: -8364529713028816482
+      SkillIcon_1_1: -2329041686176630129
+      SkillIcon_1_2: -3527868426062826577
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
