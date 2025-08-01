@@ -24,7 +24,7 @@ public class RandomAttack : SkillSO
     {
         base.ResetSkillData();
         CurrentLevel = 0;
-        ActiveCount = CurrentLevel;
+        ActiveCount = CurrentLevel + 5;
     }
 
     protected override void Active()
