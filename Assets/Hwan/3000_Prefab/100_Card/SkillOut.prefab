@@ -149,8 +149,10 @@ MonoBehaviour:
   <Desc>k__BackingField: {fileID: 0}
   <Name>k__BackingField: {fileID: 0}
   <Level>k__BackingField: {fileID: 0}
-  _nowSkill: {fileID: 0}
+  _nowSkill: {fileID: 11400000, guid: acc321791a2b77340b742855bbc5e3fd, type: 2}
   _isInside: 0
+  ChildCardSetter: {fileID: 0}
+  button: {fileID: 6735727171934919385}
 --- !u!114 &6735727171934919385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +231,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bc4f360329a9941b9919fb71298f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _setter: {fileID: 0}
   waitTime: 1
+  _isNotS: 0
 --- !u!114 &-6904174169781616907
 MonoBehaviour:
   m_ObjectHideFlags: 0

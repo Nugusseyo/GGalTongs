@@ -21,6 +21,7 @@ public class SetCard : MonoBehaviour
     [SerializeField] private RectTransform _range;
 
     private Button _outButton;
+    [SerializeField] private ClickManager _clickM;
     public void Awake()
     {
         _outButton = GameObject.Find("SkillOut").GetComponent<Button>();
@@ -62,12 +63,37 @@ public class SetCard : MonoBehaviour
     }
     public void ChooseCard()
     {
+        bool maxSkill = true;
+        for (int i = 0; i < _skills.Length; i++)
+        {
+            if (_skills[i].CurrentLevel < _skills[i].LevelLimit)
+            {
+                maxSkill = false;
+                break;
+            }
+        }
+        _clickM.CanGet = !maxSkill;
+
         for (int i = 1; i <= 3; i++)
         {
+            int s1;
             int s2 = 0;
             int s3 = 1;
 
-            CardDictionary[1 + ((i - 1) * 3)].SetCard(_skills[Random.Range(0, _skills.Length)]);
+            if (!maxSkill)
+            {
+                do
+                {
+                    s1 = Random.Range(0, _skills.Length);
+                }
+                while (_skills[s1].CurrentLevel >= _skills[s1].LevelLimit);
+            }
+            else
+            {
+                s1 = Random.Range(0, _skills.Length);
+            }
+
+            CardDictionary[1 + ((i - 1) * 3)].SetCard(_skills[s1]);
 
             s2 = Random.Range(0, _stats.Length);
             CardDictionary[2 + ((i - 1) * 3)].SetCard(_stats[s2]);
