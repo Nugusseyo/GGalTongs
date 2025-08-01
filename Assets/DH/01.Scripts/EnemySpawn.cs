@@ -1,20 +1,18 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class EnemySpawn : MonoBehaviour
 {
-    [Header("Spawner Settings")]
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
     public Transform spawnPoint;
     public float spawn = 3f;
 
     void Start()
     {
-        StartCoroutine(SpawnStart());
+        StartCoroutine(SpawnReturn());
     }
 
-    IEnumerator SpawnStart()
+    private IEnumerator SpawnReturn()
     {
         while (true)
         {
@@ -23,8 +21,11 @@ public class EnemySpawn : MonoBehaviour
         }
     }
 
-    void SpawnEnemy()
+    private void SpawnEnemy()
     {
-        Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+        if (enemyPrefabs == null || enemyPrefabs.Length == 0) return;
+
+        int ran = Random.Range(0, enemyPrefabs.Length);
+        Instantiate(enemyPrefabs[ran], spawnPoint.position, Quaternion.identity);
     }
 }

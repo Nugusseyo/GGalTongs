@@ -39,16 +39,16 @@ public class Enemy : MonoBehaviour
     {
         Attacking = true;
 
-        // 원하는 만큼 초를 센다 (예: 공격 준비 시간)
-        yield return new WaitForSeconds(0.5f); // 이 값 조절 가능
 
-        // 데미지 넣기 (UI 싱글톤 바로 호출)
+        yield return new WaitForSeconds(0.5f);
+
+
         if (HealthBarUI.Instance != null)
         {
             HealthBarUI.Instance.PlayerDamaged(damage);
         }
 
-        // 공격 후 쿨다운
+
         yield return new WaitForSeconds(attackCooldown);
 
         Attacking = false; 
