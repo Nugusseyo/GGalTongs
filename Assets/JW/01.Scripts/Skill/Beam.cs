@@ -10,8 +10,7 @@ public class Beam : MonoBehaviour
       
    }
 
-   private IEnumerator Attack()
-   {
-      
-   }
+   // private IEnumerator Attack()
+   // {
+   // }
 }
