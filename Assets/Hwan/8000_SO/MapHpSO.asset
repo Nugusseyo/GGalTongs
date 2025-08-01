@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: MapHpSO
   m_EditorClassIdentifier: 
   Name: "\uCD5C\uB300 \uCCB4\uB825"
-  Desc: "\uCD5C\uB300 \uCCB4\uB825 +1"
+  Desc: "\uD604\uC7AC, \uCD5C\uB300 \uCCB4\uB825 \uC99D\uAC00"
   Image: {fileID: 3568478954535096725, guid: 171b393d18340444295cf27fbec596c6, type: 3}
-  CurrentLevel: 0
-  StartLevel: 0
+  CurrentLevel: 1
+  StartLevel: 1
   Stat: 1
   BonusValue: 1

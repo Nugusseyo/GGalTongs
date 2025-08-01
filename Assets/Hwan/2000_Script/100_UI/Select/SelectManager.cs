@@ -8,7 +8,7 @@ public class SelectManager : MonoBehaviour
 {
     public static SelectManager Instance { get; private set; }
 
-    public Action StartSelect;
+    private Action StartSelect;
 
     [SerializeField] private GameObject selectUI;
     private SetCard setCard;

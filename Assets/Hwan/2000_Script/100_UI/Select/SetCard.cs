@@ -56,7 +56,6 @@ public class SetCard : MonoBehaviour
     }
     public void ChooseCard()
     {
-        Debug.Log("¹Ù²ñ");
         for (int i = 1; i <= 3; i++)
         {
             int s2 = 0;
@@ -79,7 +78,7 @@ public class SetCard : MonoBehaviour
     {
         for (int i = 1; i <= 3; i++)
         {
-            GetComponent<MoveStarter>().MoveStart += CardDictionary[i].GetComponent<SelectMove>().StartMove;
+            GetComponent<MoveStarter>().MoveStart += CardDictionary[i].GetComponent<SelectMove>().ChangeMode;
             CardDictionary[i].GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
         }
 
