@@ -25,7 +25,7 @@ public class SelectMove : MonoBehaviour
     [SerializeField] private CardMoveMode _mode = CardMoveMode.Stoped;
     private void Awake()
     {
-        _cardSetter = GameObject.Find("Skill").GetComponent<CardSetter>();
+        _cardSetter = GameObject.Find("SkillOut").GetComponent<CardSetter>();
         _rectMask = _cardSetter.transform.GetComponentInChildren<RectMask2D>();
 
         _rectT = GetComponent<RectTransform>();
