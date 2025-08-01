@@ -29,8 +29,4 @@ public class RandomAttackLogic : MonoBehaviour
         Destroy(effect , 2f);
         
     }
-
-    private void OnDrawGizmos()
-    {
-    }
 }

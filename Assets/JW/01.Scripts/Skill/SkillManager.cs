@@ -32,10 +32,6 @@ public class SkillManager : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current.qKey.wasPressedThisFrame)
-        {
-            SceneManager.LoadScene(0);
-        }
         float dt = Time.deltaTime;
         if (SkillList != null)
         {
