@@ -21,10 +21,12 @@ public class CardSetter : MonoBehaviour
 
     [SerializeField] private bool _isInside = true;
 
+    public CardSetter ChildCardSetter;
+
+
     public void SetCard(SkillSO skill)
     {
         _nowSkill = skill;
-
 
         if (_isInside)
         {
@@ -46,6 +48,8 @@ public class CardSetter : MonoBehaviour
                 Debug.Log(12);
                 SkillManager.Instance.Add(skill);
             }
+
+            Refresh();
         };
     }
     public void SetCard(StatCardSO stat)
@@ -63,11 +67,12 @@ public class CardSetter : MonoBehaviour
     {
         if (_nowSkill == null)
         {
+            Debug.Log("sdf");
             SetCard(_nowStat);
         }
         else
         {
-            SetCard(_nowSkill);
+            ChildCardSetter.SetCard(_nowSkill);
         }
     }
 }

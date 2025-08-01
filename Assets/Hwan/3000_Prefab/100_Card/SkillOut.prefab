@@ -149,7 +149,7 @@ MonoBehaviour:
   <Desc>k__BackingField: {fileID: 0}
   <Name>k__BackingField: {fileID: 0}
   <Level>k__BackingField: {fileID: 0}
-  _nowSkill: {fileID: 11400000, guid: f28b09bacec56704789cf745f13c2fd0, type: 2}
+  _nowSkill: {fileID: 0}
   _isInside: 0
 --- !u!114 &6735727171934919385
 MonoBehaviour:

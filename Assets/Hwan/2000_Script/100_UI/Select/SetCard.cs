@@ -20,8 +20,11 @@ public class SetCard : MonoBehaviour
 
     [SerializeField] private RectTransform _range;
 
+    private Button _outButton;
     public void Awake()
     {
+        _outButton = GameObject.Find("SkillOut").GetComponent<Button>();
+
         foreach (StatCardSO SO in _stats)
         {
             SO.First();
@@ -79,6 +82,8 @@ public class SetCard : MonoBehaviour
 
     private void MoveCard()
     {
+        _outButton.GetComponent<CardSetter>().ChildCardSetter = CardDictionary[1];
+
         for (int i = 1; i <= 3; i++)
         {
             GetComponent<MoveStarter>().MoveStart += CardDictionary[i].GetComponent<SelectMove>().ChangeMode;
@@ -102,6 +107,7 @@ public class SetCard : MonoBehaviour
 
     public void ButtonInter(bool boo)
     {
+        _outButton.interactable = boo;
         for (int i = 2; i <= 3; i++)
         {
             CardDictionary[i].GetComponent<Button>().interactable = boo;
