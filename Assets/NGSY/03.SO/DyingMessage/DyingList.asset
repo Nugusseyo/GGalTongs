@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b33aad1639efd4b887a42e599a82cf, type: 3}
+  m_Name: DyingList
+  m_EditorClassIdentifier: 
+  MessageList:
+  - {fileID: 11400000, guid: fc9cc4c5e9ce9af4391d834fc8e2fd06, type: 2}
+  - {fileID: 11400000, guid: 7521567325859c24d8604104a3d21179, type: 2}
+  - {fileID: 11400000, guid: 6da000e1225d8e34f8967e11d1b11caf, type: 2}
+  - {fileID: 11400000, guid: d16b726319a018f46b7fd4572acc95d7, type: 2}
+  - {fileID: 11400000, guid: aa26ff37753614241b4f772cb708fffd, type: 2}
+  - {fileID: 11400000, guid: 3e40f02ddb6a77b4084917acf7871c59, type: 2}

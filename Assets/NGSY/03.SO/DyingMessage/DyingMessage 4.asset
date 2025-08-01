@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820948febafa4364593945723d909cf1, type: 3}
+  m_Name: DyingMessage 4
+  m_EditorClassIdentifier: 
+  Messages: "\uC774 \uD300\uC5D0\uB294 \uC5D0\uC14B \uBA87\uAC1C\uB97C \uC9C1\uC811
+    \uCC0D\uC740 \uC804\uC124\uC758 \uD53D\uC140\uC544\uD2F0\uC2A4\uD2B8 \uAFC8\uB098\uBB34\uAC00
+    \uC874\uC7AC\uD569\uB2C8\uB2E4."
