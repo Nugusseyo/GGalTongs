@@ -26,7 +26,7 @@ public class CardSetter : MonoBehaviour
         Image.sprite = skill.Icon;
         Desc.text = skill.SkillDesc;
         Name.text = skill.Name;
-        Level.text = $"·¹º§ : {skill.CurrentLevel}";
+        Level.text = $"ï¿½ï¿½ï¿½ï¿½ : {skill.CurrentLevel}";
         Use = () =>
         {
             if (SkillManager.Instance.SkillList.Contains(skill))
@@ -48,7 +48,7 @@ public class CardSetter : MonoBehaviour
         Image.sprite = stat.Image;
         Desc.text = stat.Desc;
         Name.text = stat.Name;
-        Level.text = $"·¹º§ : {stat.CurrentLevel}";
+        Level.text = $"ï¿½ï¿½ï¿½ï¿½ : {stat.CurrentLevel}";
         Use = stat.Apply;
     }
 
