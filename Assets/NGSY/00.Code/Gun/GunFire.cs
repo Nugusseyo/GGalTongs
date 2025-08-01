@@ -13,12 +13,14 @@ public class GunFire : MonoBehaviour
     public float minusAttackSpeed;
 
     private float _basePower = 10f;
+    private float _plusPower;
     public float AttackPower { get; private set; }
     
     private void Awake()
     {
         AttackPower = _basePower;
         AttackSpeed = 200;
+        _plusPower = 0;
         if (Instance == null)
         {
             Instance = this;
@@ -36,7 +38,8 @@ public class GunFire : MonoBehaviour
 
     public void BulletPowerUp(float power)
     {
-        AttackPower = _basePower + power;
+        _plusPower += power;
+        AttackPower = _basePower + _plusPower;
     }
 
     private IEnumerator BulletShot(float coolTime)

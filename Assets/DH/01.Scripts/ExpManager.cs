@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -30,20 +29,14 @@ public class ExpManager : MonoBehaviour
     public void ExpUp(int value)
     {
         currentExp += value;
-        try
-        {
-            expBar.GrowingExpBar();
-        }
-        catch (Exception e)
-        {
-            Debug.Log("그로윙 엑스바가 실행되지 않음.");
-            throw;
-        }
+        expBar.GrowingExpBar();
         if (currentExp < goalExp) return;
         Debug.Log("넘어갔따");
         goalExp = 10 * (CurrentLevel + 1);
         CurrentLevel++;
         currentExp = 0;
+        float ran = Random.Range(0, 10);
+        if(ran == 4) {TorchItemUi.Instance.AddTorchItme(1);}
         levelUp?.Invoke();
     }
 }
