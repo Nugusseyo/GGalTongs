@@ -41,7 +41,7 @@ public class EnemyHP : MonoBehaviour
         if (other.CompareTag("Bullet"))
         {
             TakeDamage(GunFire.Instance.AttackPower);
-            Destroy(other.gameObject);
+            PoolManager.Instance.Push(other.GetComponent<IPoolable>());
         }
     }
 }
