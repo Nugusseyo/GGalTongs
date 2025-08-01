@@ -11,6 +11,7 @@ public class HealthBarUI : MonoBehaviour
     [SerializeField] private GunFireAudioClip audioPlayer;
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private RectTransform hpBar;
+    [SerializeField] private GameObject endUI;
     private GunFireCameraShaker _cameraShaker;
 
     public float MaxHealth { get; private set; }
@@ -55,6 +56,10 @@ public class HealthBarUI : MonoBehaviour
         UpdateHealthBar(_curHealth);
         _cameraShaker.ShakeCamera();
         audioPlayer.PlayShotSound();
+        if (_curHealth <= 0)
+        {
+            endUI.SetActive(true);
+        }
     }
 
     public void PlusCurrentHealth(float value)
@@ -68,7 +73,7 @@ public class HealthBarUI : MonoBehaviour
         float currentWidth = hpBar.sizeDelta.x;
         float targetWidth = _maxBarWidth * _targetRatio;
 
-        float smoothedWidth = Mathf.Lerp(currentWidth, targetWidth, Time.deltaTime * 10f); // 속도는 조절 가능
+        float smoothedWidth = Mathf.Lerp(currentWidth, targetWidth, Time.deltaTime * 10f);
 
         Vector2 newSize = hpBar.sizeDelta;
         newSize.x = smoothedWidth;
