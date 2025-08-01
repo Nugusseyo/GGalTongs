@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: SkillLazer
   m_EditorClassIdentifier: 
   Icon: {fileID: -2329041686176630129, guid: 6fc00bb94f5202746b1138a69058f18c, type: 3}
-  Name: "\uB808\uC774\uC800 \uCD1D"
+  Name: "\uB808\uC774\uC800 \uAC74"
   LevelLimit: 5
-  CurrentLevel: 2
+  CurrentLevel: 0
   SkillDesc: "\uC790\uB3D9 \uC870\uC900\uB418\uB294\\n\uB808\uC774\uC800 \uBC1C\uC0AC\uCCB4\uAC00\\n\uB0A0\uC544\uAC00
     \uC801\uC744\\n\uACF5\uACA9\uD569\uB2C8\uB2E4."
   CoolT: 2
-  CurrentCoolT: 1.9572724
+  CurrentCoolT: 2
   ActiveCount: 0
   _lazer: {fileID: 2622078800461583653, guid: b682660bbd0cd6b408f62818cab0c4e9, type: 3}
   spawnPoint: {fileID: 0}
-  AtkDMG: 3
+  AtkDMG: 4

@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerActions
 {
     public bool isGamePaused = false;
-    private InputSystem_Actions _inputSys;
+    public InputSystem_Actions _inputSys;
 
     public Action OnMoveKeyPress;
     public Action OnEscKeyPress;
@@ -24,6 +24,7 @@ public class PlayerInputSO : ScriptableObject, InputSystem_Actions.IPlayerAction
 
     private void OnDisable()
     {
+        _inputSys.Player.SetCallbacks(null);
         _inputSys.Player.Disable();
     }
     public void OnMove(InputAction.CallbackContext context)
