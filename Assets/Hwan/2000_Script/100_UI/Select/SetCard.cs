@@ -10,46 +10,68 @@ public class SetCard : MonoBehaviour
     [SerializeField] private GameObject _statCard_2_Prefab;
 
     [Header("스킬 SO들")]
-    [SerializeField] private SkillCardSO[] _skills;
+    [SerializeField] private SkillSO[] _skills;
 
     [Header("스탯 SO들")]
     [SerializeField] private StatCardSO[] _stats;
 
-    public Dictionary<Card, CardSetter> CardDictionary { get; private set; } = new Dictionary<Card, CardSetter>();
+    public Dictionary<int, CardSetter> CardDictionary { get; private set; } = new Dictionary<int, CardSetter>();
 
     public void Awake()
     {
         MakeCard();
         ChooseCard();
+        MoveCard();
     }
 
     private void MakeCard()
     {
-        CardDictionary.Add(Card.SkillCard, Instantiate(_skillCard_Prefab.GetComponent<CardSetter>(), transform));
-        CardDictionary.Add(Card.StatCard_1, Instantiate(_statCard_1_Prefab.GetComponent<CardSetter>(), transform));
-        CardDictionary.Add(Card.StatCard_2, Instantiate(_statCard_2_Prefab.GetComponent<CardSetter>(), transform));
+        CardDictionary.Add(1, Instantiate(_skillCard_Prefab.GetComponent<CardSetter>(), transform));
+        CardDictionary.Add(2, Instantiate(_statCard_1_Prefab.GetComponent<CardSetter>(), transform));
+        CardDictionary.Add(3, Instantiate(_statCard_2_Prefab.GetComponent<CardSetter>(), transform));
+
+        CardDictionary.Add(4, Instantiate(_skillCard_Prefab.GetComponent<CardSetter>(), CardDictionary[1].transform));
+        CardDictionary.Add(5, Instantiate(_statCard_1_Prefab.GetComponent<CardSetter>(), CardDictionary[2].transform));
+        CardDictionary.Add(6, Instantiate(_statCard_2_Prefab.GetComponent<CardSetter>(), CardDictionary[3].transform));
+
+        CardDictionary.Add(7, Instantiate(_skillCard_Prefab.GetComponent<CardSetter>(), CardDictionary[1].transform));
+        CardDictionary.Add(8, Instantiate(_statCard_1_Prefab.GetComponent<CardSetter>(), CardDictionary[2].transform));
+        CardDictionary.Add(9, Instantiate(_statCard_2_Prefab.GetComponent<CardSetter>(), CardDictionary[3].transform));
     }
 
     private void ChooseCard()
     {
-        SkillCardSO selectedSkill;
-        StatCardSO selectedStat_1;
-        StatCardSO selectedStat_2;
-
-        selectedSkill = _skills[Random.Range(0, _skills.Length)];
-        selectedStat_1 = _stats[Random.Range(0, _stats.Length)];
-        do
+        for (int i = 1; i <= 3; i++)
         {
-            selectedStat_2 = _stats[Random.Range(0, _stats.Length)];
-        }
-        while (selectedStat_2 != selectedStat_1);
+            int s2 = 0;
+            int s3 = 1;
 
-        CardSetting(selectedSkill, selectedStat_1, selectedStat_2);
+            CardDictionary[1 + ((i - 1) * 2)].SetCard(_skills[Random.Range(0, _skills.Length)]);
+
+            s2 = Random.Range(0, _stats.Length);
+            CardDictionary[2 + ((i - 1) * 2)].SetCard(_stats[s2]);
+            do
+            {
+                s3 = Random.Range(0, _stats.Length);
+                CardDictionary[i * 3].SetCard(_stats[s3]);
+            }
+            while (s3 == s2);
+        }
     }
-    private void CardSetting(SkillCardSO selectedSkill, StatCardSO selectedStat_1, StatCardSO selectedStat_2)
+
+    private void MoveCard()
     {
-        CardDictionary[Card.SkillCard].SetCard(selectedSkill);
-        CardDictionary[Card.StatCard_1].SetCard(selectedStat_1);
-        CardDictionary[Card.StatCard_2].SetCard(selectedStat_2);
+        for (int i = 4; i <= CardDictionary.Count; i++)
+        {
+            CardDictionary[i].GetComponent<RectTransform>().localScale = Vector3.one;
+            CardDictionary[i].GetComponent<SelectMove>().enabled = false;
+        }
+        CardDictionary[4].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 1080);
+        CardDictionary[5].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 1080);
+        CardDictionary[6].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 1080);
+
+        CardDictionary[7].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -1080);
+        CardDictionary[8].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -1080);
+        CardDictionary[9].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -1080);
     }
 }

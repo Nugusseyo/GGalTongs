@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4e7a7c49e6c66f4e8df6c8d40a9b4ed, type: 3}
-  m_Name: StatCardSO
+  m_Name: AttackSpeedSO
   m_EditorClassIdentifier: 
-  Name: Stat1
-  Desc: "\uBC29\uAC11\uACE0"
-  Image: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  Level: 122
-  Stat: 0
+  Name: "\uACF5\uACA9 \uC18D\uB3C4"
+  Desc: "\uACF5\uACA9 \uC18D\uB3C4\uB97C {0}\uB9CC\uD07C \uC62C\uB9BD\uB2C8\uB2E4."
+  Image: {fileID: 703449574899508604, guid: 171b393d18340444295cf27fbec596c6, type: 3}
+  Level: 0
+  Stat: 2
   BonusValue: 0

@@ -16,13 +16,13 @@ public class CardSetter : MonoBehaviour
 
     public PlayerStat Stat { get; private set; }
 
-    public void SetCard(SkillCardSO skill)
+    public void SetCard(SkillSO skill)
     {
-        Image.sprite = skill.Image;
-        Desc.text = skill.Desc;
+        Image.sprite = skill.Icon;
+        Desc.text = skill.SkillDesc;
         Name.text = skill.Name;
-        Level.text = $"레벨 : {skill.Level}";
-        Skill = skill.Skill;
+        Level.text = $"레벨 : {skill.CurrentLevel}";
+        Skill = skill;
     }
     public void SetCard(StatCardSO stat)
     {
