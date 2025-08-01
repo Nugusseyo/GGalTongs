@@ -47,7 +47,6 @@ public class EnemyScanSkill : SkillSO
                     break;
             }
         }
-        Debug.Log($"hits 카운트 : {hits.Length}, 에너미 리스트 : {_enemyList}");
         ActiveCount = CurrentLevel + 6;
         
     }
