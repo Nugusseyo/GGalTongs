@@ -20,6 +20,11 @@ public class SetCard : MonoBehaviour
 
     public void Awake()
     {
+        foreach (StatCardSO SO in _stats)
+        {
+            SO.First();
+        }
+
         MakeCard();
         ChooseCard();
         MoveCard();
