@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class SkillSO : ScriptableObject
 {
@@ -15,12 +16,21 @@ public abstract class SkillSO : ScriptableObject
     public string SkillDesc;
     [Header("쿨타임")] 
     public float CoolT;
-
-    public float CurrentT;
-
-    public virtual void Initialize()
+    public float CurrentCoolT;
+    private bool _isSubs = false;
+    
+    public virtual void Initialize( )
     {
-        CurrentT = CoolT;
+        CurrentCoolT = CoolT;
+        if (!_isSubs)
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            _isSubs = true;
+        }
+    }
+
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
         CurrentLevel = 1;
     }
 
@@ -29,11 +39,11 @@ public abstract class SkillSO : ScriptableObject
     public abstract void Upgrade();
     public virtual void UpdateCoolT(float dt)
     {
-        CurrentT -= dt;
-        if (CurrentT <= 0)
+        CurrentCoolT -= dt;
+        if (CurrentCoolT <= 0)
         {
             Active();
-            CurrentT = CoolT;
+            CurrentCoolT = CoolT;
         }
     }
 }

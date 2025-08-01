@@ -29,6 +29,5 @@ public class ScanEffect : MonoBehaviour
     public void Follow(GameObject enemy)
     {
         transform.position = enemy.transform.position;
-        Debug.Log(enemy);
     }
 }
