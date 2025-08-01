@@ -8,7 +8,7 @@ public class TestUI : MonoBehaviour
     public void Click()
     { 
         SkillManager.Instance.Add(_skill);
-        if (SkillManager.Instance.SkillList != null)
+        if (SkillManager.Instance.SkillList.Contains(_skill))
         {
             _skill.Upgrade();
         }
