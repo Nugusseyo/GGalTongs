@@ -2,9 +2,19 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
+    [Header("Prefab")]
     [SerializeField] private GameObject torchPrefab;
+    [Header("SoundCilp")]
+    [SerializeField] private AudioClip[] installationClips;
+    [SerializeField] private AudioClip[] removeClips;
     public static Slot SelectSlot { get; private set; }
     private bool isThere;
+    private AudioSource source;
+    private void Start()
+    {
+        source = GetComponentInParent<AudioSource>();
+        TorchItemUi.Instance.OnApplyCount += CheckTorch;
+    }
     private void OnMouseEnter()
     {
         if(SelectSlot == null)
@@ -32,21 +42,26 @@ public class Slot : MonoBehaviour
             TorchItemUi.Instance.UseTorchItem(1);
             torchcompo.SetSlot(this);
         }
+        SoundPlay(installationClips);
         OnMouseExit();
     }
+
+    private void SoundPlay(AudioClip[] clips)
+    {
+        source.clip = clips[Random.Range(0, clips.Length)];
+        source.Play();
+    }
+
     public void RemoveTorch()
     {
         isThere = false;
         CheckTorch();
+        SoundPlay(removeClips);
     }
     private void CheckTorch()
     {
         if (!isThere)
             gameObject.SetActive(TorchItemUi.Instance?.CurretTorchItem > 0);
-    }
-    private void Start()
-    {
-        TorchItemUi.Instance.OnApplyCount += CheckTorch;
     }
     private void OnDestroy()
     {

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8027492956535927803}
   - component: {fileID: 2507444979719629081}
   - component: {fileID: -1789985320443824383}
+  - component: {fileID: -2499128165366489979}
   m_Layer: 7
   m_Name: Lazer
   m_TagString: Bullet
@@ -154,6 +155,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &-2499128165366489979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2622078800461583653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8541055d82ffb544ad0581af97bf152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lazerSO: {fileID: 11400000, guid: 8b204f5870750c8438c452d595386c39, type: 2}
 --- !u!1 &7085755336941610152
 GameObject:
   m_ObjectHideFlags: 0
