@@ -524,6 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12dd15dcf85bea409554feaf7fee8a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInput: {fileID: 11400000, guid: b2004e94dccb5864b87917c084ae1fd4, type: 2}
   shootEvent:
     m_PersistentCalls:
       m_Calls:
