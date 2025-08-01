@@ -18,5 +18,4 @@ MonoBehaviour:
   CurrentLevel: 1
   SkillDesc: 
   CoolT: 3
-  CurrentT: 0
-  _effect: {fileID: 3666323531000064562, guid: 35cb37f7105e305479d2243c17a8fd64, type: 3}
+  CurrentT: 1.0676708
