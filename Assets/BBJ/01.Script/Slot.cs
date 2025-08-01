@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
-    [SerializeField] private GameObject speechBubble;
-
     [SerializeField] private GameObject torchPrefab;
     public static Slot SelectSlot { get; private set; }
     private bool isThere;
@@ -12,8 +10,8 @@ public class Slot : MonoBehaviour
         if(SelectSlot == null)
         {
             SelectSlot = this;
-            speechBubble.SetActive(true);
-            speechBubble.transform.position = transform.position;
+            SlotManage.Instance.SpeechBubble.SetActive(true);
+            SlotManage.Instance.SpeechBubble.transform.position = transform.position;
         }
     }
     private void OnMouseExit()
@@ -21,7 +19,7 @@ public class Slot : MonoBehaviour
         if(SelectSlot == this)
         {
             SelectSlot = null;
-            speechBubble.SetActive(false);
+            SlotManage.Instance.SpeechBubble.SetActive(false);
         }
     }
     public void InstallationTorch()
