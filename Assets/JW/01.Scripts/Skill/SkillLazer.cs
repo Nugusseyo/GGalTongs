@@ -24,6 +24,7 @@ public class SkillLazer : SkillSO
 
     protected override void Active()
     {
+        ActiveCount = CurrentLevel;
         for (int i = 0; i < ActiveCount; i++)
         { 
             //사운드 재생
