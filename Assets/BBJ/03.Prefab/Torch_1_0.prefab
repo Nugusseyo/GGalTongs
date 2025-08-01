@@ -106,9 +106,9 @@ GameObject:
   - component: {fileID: 2310568963455481954}
   - component: {fileID: 6787818973843999933}
   - component: {fileID: 5315408133545655165}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Torch_1_0
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,7 +256,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1.3844082
+  m_Radius: 2
 --- !u!82 &5315408133545655165
 AudioSource:
   m_ObjectHideFlags: 0
@@ -577,13 +577,13 @@ MonoBehaviour:
   m_ComponentVersion: 2
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.681
-  m_Color: {r: 0.81886786, g: 0.5732075, b: 0.5732075, a: 1}
-  m_Intensity: 0.7
-  m_LightVolumeIntensity: 0.8
+  m_FalloffIntensity: 0.632
+  m_Color: {r: 0.78867924, g: 0.3199359, b: 0.3199359, a: 0.8}
+  m_Intensity: 1
+  m_LightVolumeIntensity: 0.08
   m_LightVolumeEnabled: 1
   m_ApplyToSortingLayers: 00000000
-  m_LightCookieSprite: {fileID: 21300000, guid: 119f93d0bcbf1e743bf5fcf237507d39, type: 3}
+  m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
@@ -592,18 +592,18 @@ MonoBehaviour:
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
   m_ShadowsEnabled: 1
-  m_ShadowIntensity: 1
-  m_ShadowSoftness: 0.498
-  m_ShadowSoftnessFalloffIntensity: 0.318
-  m_ShadowVolumeIntensityEnabled: 1
-  m_ShadowVolumeIntensity: 0.643
+  m_ShadowIntensity: 0.75
+  m_ShadowSoftness: 0.3
+  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
     m_Center: {x: 0, y: -0.00000011920929, z: 0}
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 4
+  m_PointLightInnerRadius: 0.3
+  m_PointLightOuterRadius: 1
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
