@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd3a956153f4fed83d8cf7e0fb7ae91, type: 3}
+  m_Name: OuchAudio
+  m_EditorClassIdentifier: 
+  ShotAudioClips:
+  - {fileID: 8300000, guid: c721ef49c2af0d74dbaf36215ac38552, type: 3}
+  - {fileID: 8300000, guid: 8be52fbd7f4858747b168fbd093d63af, type: 3}
+  - {fileID: 8300000, guid: 5423048d1ae3bfe4db77a2747f9daf0f, type: 3}
+  - {fileID: 8300000, guid: bedbf8c0628f276458199bee171305bd, type: 3}
+  - {fileID: 8300000, guid: 5c03d7a4c71ed1f41b5ce019acbbdfd3, type: 3}
+  - {fileID: 8300000, guid: 18cd0a4500a074b4295e98e0eb30c8bc, type: 3}
+  - {fileID: 8300000, guid: d7331f84f740d214d9a092cf0b03007b, type: 3}
+  - {fileID: 8300000, guid: 02829256792a88647bb68c73f815eb20, type: 3}

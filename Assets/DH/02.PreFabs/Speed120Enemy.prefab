@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
-  attackRange: 0.5
+  attackRange: 0.8
   damage: 5
   attackCooldown: 1
 --- !u!114 &2931638439467543649
