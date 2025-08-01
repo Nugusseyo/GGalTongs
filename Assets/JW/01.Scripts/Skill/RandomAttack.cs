@@ -18,7 +18,10 @@ public class RandomAttack : SkillSO
 
     protected override void Active()
     {
-        RandomAttackLogic.Instance?.UseSkill();
+        for (int i = 0; i < _spawnLimit; i++)
+        {
+            RandomAttackLogic.Instance?.UseSkill();
+        }
     }
 
     public override void Upgrade()
