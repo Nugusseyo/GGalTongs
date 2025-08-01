@@ -769,11 +769,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87eb8b7c48c1daf4f8e0df505160f4dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spinSpeed: 30000
-  _stopTime: 2
+  _spinSpeed: 12500
+  _stopTime: 2.5
   _stopValue: 100
-  _slowValue: -500
-  _endSpeed: 5000
+  _slowValue: -1000
+  _endSpeed: 8000
   _stopTargetY: 300
 --- !u!114 &-3458294101460161143
 MonoBehaviour:
@@ -787,6 +787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bc4f360329a9941b9919fb71298f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitTime: 2
 --- !u!1 &7959940074028469878
 GameObject:
   m_ObjectHideFlags: 0
