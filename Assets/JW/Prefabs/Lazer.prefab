@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8027492956535927803}
   - component: {fileID: 2507444979719629081}
   - component: {fileID: -1789985320443824383}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lazer
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
