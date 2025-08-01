@@ -17,15 +17,12 @@ public class RandomAttack : SkillSO
         base.Initialize();
         AtkDMG = 2;
         ActiveCount = CurrentLevel;
-        Debug.Log("123");
     }
 
     public override void ResetSkillData()
     {
         base.ResetSkillData();
-        CurrentLevel = 1;
         ActiveCount = CurrentLevel;
-        Debug.Log("Reset");
     }
 
     protected override void Active()
