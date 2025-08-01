@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: "\uACF5\uACA9 \uC18D\uB3C4"
   Desc: "\uACF5\uACA9 \uC18D\uB3C4 \uC99D\uAC00"
   Image: {fileID: 703449574899508604, guid: 171b393d18340444295cf27fbec596c6, type: 3}
-  CurrentLevel: 1
+  CurrentLevel: 8
   StartLevel: 1
   Stat: 2
   BonusValue: 30

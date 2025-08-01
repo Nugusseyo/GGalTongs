@@ -18,4 +18,4 @@ MonoBehaviour:
   CurrentLevel: 1
   StartLevel: 1
   Stat: 1
-  BonusValue: 1
+  BonusValue: 2

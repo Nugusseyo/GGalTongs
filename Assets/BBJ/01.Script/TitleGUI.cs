@@ -14,6 +14,6 @@ public class TitleGUI : MonoBehaviour
     }
     public void StartIngame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("MergeScene");
     }
 }
