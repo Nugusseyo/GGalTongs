@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,11 +20,13 @@ public class SelectMove : MonoBehaviour
     private Coroutine stopCo;
 
     [SerializeField] private CardSetter _cardSetter;
+    [SerializeField] private RectMask2D _rectMask;
 
     [SerializeField] private CardMoveMode _mode = CardMoveMode.Stoped;
     private void Awake()
     {
         _cardSetter = GameObject.Find("Skill").GetComponent<CardSetter>();
+        _rectMask = _cardSetter.transform.GetComponentInChildren<RectMask2D>();
 
         _rectT = GetComponent<RectTransform>();
 
@@ -57,6 +60,7 @@ public class SelectMove : MonoBehaviour
         {
             _cardSetter.SetCard(GetComponent<CardSetter>()._nowSkill);
             _cardSetter.GetComponent<Button>().interactable = true;
+            _rectMask.enabled = false;
         }
     }
 
@@ -73,8 +77,12 @@ public class SelectMove : MonoBehaviour
                 {
                     stopCo = StartCoroutine(StopCo());
                 }
-                if( _isNotS) button.interactable = false;
-                else _cardSetter.GetComponent<Button>().interactable = true;
+                if (_isNotS) button.interactable = false;
+                else
+                {
+                    _cardSetter.GetComponent<Button>().interactable = false;
+                    _rectMask.enabled = true;
+                }
                 _rectT.anchoredPosition -= new Vector2(0, _speed) * Time.unscaledDeltaTime;
                 break;
         }

@@ -31,7 +31,7 @@ public class CardSetter : MonoBehaviour
             Image.sprite = skill.Icon;
             Desc.text = skill.SkillDesc;
             Name.text = skill.Name;
-            Level.text = $"���� : {skill.CurrentLevel}";
+            Level.text = $"레벨 : {skill.CurrentLevel}";
         }
 
         Use = () =>
@@ -55,7 +55,7 @@ public class CardSetter : MonoBehaviour
         Image.sprite = stat.Image;
         Desc.text = stat.Desc;
         Name.text = stat.Name;
-        Level.text = $"���� : {stat.CurrentLevel}";
+        Level.text = $"레벨 : {stat.CurrentLevel}";
         Use = stat.Apply;
     }
 
