@@ -40,6 +40,11 @@ public class EnemyHP : MonoBehaviour
             ExpManager.Instance.ExpUp((int)MaxHp / 10);
             Debug.Log("Exp " + MaxHp/10);
         }
+
+        if(ScoreManager.Instance != null)
+        {
+        ScoreManager.Instance.killCount++;
+        }
         Destroy(gameObject);
     }
 
