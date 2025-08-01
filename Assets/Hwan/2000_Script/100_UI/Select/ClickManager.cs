@@ -25,10 +25,10 @@ public class ClickManager : MonoBehaviour
 
     private IEnumerator Close()
     {
-        button.onClick.AddListener(() => _setter.Use());
+        _setter.Use();
         if (_isNotS)
         {
-            button.onClick.AddListener(() => _setter.Refresh());
+            _setter.Refresh();
         }
         FindAnyObjectByType<SetCard>().ButtonInter(false);
         yield return new WaitForSecondsRealtime(waitTime);

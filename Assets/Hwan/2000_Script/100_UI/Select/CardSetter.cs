@@ -27,7 +27,7 @@ public class CardSetter : MonoBehaviour
         _nowSkill = skill;
 
         if (_isInside)
-        {
+        {   
             Image.sprite = skill.Icon;
             Desc.text = skill.SkillDesc;
             Name.text = skill.Name;
@@ -52,6 +52,8 @@ public class CardSetter : MonoBehaviour
     }
     public void SetCard(StatCardSO stat)
     {
+        Debug.Log("sdfs");
+
         _nowStat = stat;
 
         Image.sprite = stat.Image;
