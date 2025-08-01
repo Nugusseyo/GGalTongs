@@ -20,11 +20,6 @@ public class SetCard : MonoBehaviour
 
     public void Awake()
     {
-        foreach (StatCardSO SO in _stats)
-        {
-            SO.First();
-        }
-
         MakeCard();
         ChooseCard();
         MoveCard();
@@ -60,7 +55,7 @@ public class SetCard : MonoBehaviour
         {
             int s2 = 0;
             int s3 = 1;
-
+            Debug.Log(CardDictionary[1]);
             CardDictionary[1 + ((i - 1) * 3)].SetCard(_skills[Random.Range(0, _skills.Length)]);
 
             s2 = Random.Range(0, _stats.Length);

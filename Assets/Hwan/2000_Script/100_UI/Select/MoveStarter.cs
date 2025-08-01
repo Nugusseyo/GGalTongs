@@ -7,9 +7,9 @@ public class MoveStarter : MonoBehaviour
 {
     public Action MoveStart { get; set; }
 
-    private bool CanInput = false;
-
     private SetCard setCard;
+
+    private bool isFirst = true;
 
     private void Awake()
     {
@@ -18,12 +18,18 @@ public class MoveStarter : MonoBehaviour
 
     private void OnEnable()
     {
-        ChangeCard();
+        if (!isFirst)
+        {
+            ChangeCard();
+        }
+        else
+        {
+            isFirst = false;
+        }
     }
 
     private void ChangeCard()
     {
-        CanInput = true;
         MoveStart?.Invoke();
         setCard.ChooseCard();
     }

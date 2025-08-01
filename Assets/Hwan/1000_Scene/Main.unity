@@ -726,6 +726,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health
       objectReference: {fileID: 0}
+    - target: {fileID: 8421015631640877494, guid: 5541f363296b1f047b1fd6180fd4e971, type: 3}
+      propertyPath: endUI
+      value: 
+      objectReference: {fileID: 2126298197}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -740,6 +744,11 @@ RectTransform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4237404525291809990, guid: dcc3850a36045604fa5c6a762e53fed6, type: 3}
   m_PrefabInstance: {fileID: 49210304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2126298197 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3149916875581341641, guid: 5541f363296b1f047b1fd6180fd4e971, type: 3}
+  m_PrefabInstance: {fileID: 2115499453}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &763357036328756271
 PrefabInstance:
