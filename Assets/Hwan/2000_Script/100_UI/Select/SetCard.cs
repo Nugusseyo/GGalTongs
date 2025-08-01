@@ -98,7 +98,7 @@ public class SetCard : MonoBehaviour
         CardDictionary[9].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -1080);
     }
 
-    public void AnimatorInter(bool boo)
+    public void ButtonInter(bool boo)
     {
         for (int i = 1; i <= 3; i++)
         {

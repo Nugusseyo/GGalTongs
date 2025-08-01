@@ -15,6 +15,7 @@ MonoBehaviour:
   Name: "\uCD5C\uB300 \uCCB4\uB825"
   Desc: "\uCD5C\uB300 \uCCB4\uB825 +1"
   Image: {fileID: 3568478954535096725, guid: 171b393d18340444295cf27fbec596c6, type: 3}
-  Level: 0
+  CurrentLevel: 0
+  StartLevel: 0
   Stat: 1
   BonusValue: 1

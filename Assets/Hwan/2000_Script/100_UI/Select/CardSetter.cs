@@ -23,10 +23,15 @@ public class CardSetter : MonoBehaviour
         Level.text = $"·¹º§ : {skill.CurrentLevel}";
         Use = () =>
         {
-            SkillManager.Instance.Add(skill);
             if (SkillManager.Instance.SkillList.Contains(skill))
             {
                 skill.Upgrade();
+                Debug.Log($"Upgrade , {SkillManager.Instance.SkillList.Contains(skill)}");
+            }
+            else if (!SkillManager.Instance.SkillList.Contains(skill))
+            {
+                Debug.Log(12);
+                SkillManager.Instance.Add(skill);
             }
         };
     }

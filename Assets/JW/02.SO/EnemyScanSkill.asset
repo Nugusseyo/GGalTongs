@@ -16,8 +16,8 @@ MonoBehaviour:
   Name: "\uC57C\uAC04 \uD22C\uC2DC\uACBD"
   LevelLimit: 5
   CurrentLevel: 2
-  SkillDesc: "\uC8FC\uBCC0\uC758 \uC801\uB4E4\uC744 \uAC10\uC9C0\uD558\uC5EC \uBCF4\uB77C\uC0C9
-    \uC6D0\uC73C\uB85C \uD45C\uC2DC\uD574\uC90D\uB2C8\uB2E4."
+  SkillDesc: "\uC8FC\uBCC0\uC758 \uC801\uB4E4\uC744\\n\uAC10\uC9C0\uD558\uC5EC\\n\uBCF4\uB77C\uC0C9
+    \uC6D0\uC73C\uB85C\\n\uD45C\uC2DC\uD574\uC90D\uB2C8\uB2E4."
   CoolT: 1
   CurrentCoolT: 0.359359
   ActiveCount: 8

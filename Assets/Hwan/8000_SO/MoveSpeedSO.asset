@@ -15,6 +15,7 @@ MonoBehaviour:
   Name: "\uC774\uB3D9\uC18D\uB3C4"
   Desc: "\uC774\uB3D9\uC18D\uB3C4 +1"
   Image: {fileID: -7740097355486894076, guid: 171b393d18340444295cf27fbec596c6, type: 3}
-  Level: 0
+  CurrentLevel: 0
+  StartLevel: 0
   Stat: 0
   BonusValue: 1

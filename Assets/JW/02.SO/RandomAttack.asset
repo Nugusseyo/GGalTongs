@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: RandomAttack
   m_EditorClassIdentifier: 
   Icon: {fileID: 484871560781726236, guid: 16a3506e5decdcd4c914fd827594eca3, type: 3}
-  Name: "\uAD6C\uC6D0"
+  Name: "\uC2EC\uD310"
   LevelLimit: 5
   CurrentLevel: 1
-  SkillDesc: "\uB79C\uB364\uD55C \uC704\uCE58\uC5D0\uC11C "
+  SkillDesc: "\uB79C\uB364\uD55C \uC704\uCE58\uC5D0\uC11C\\n\uB808\uC774\uC800\uAC00\\n\uBE57\uBC1C\uCE69\uB2C8\uB2E4."
   CoolT: 3
   CurrentCoolT: 0
   ActiveCount: 0
+  AtkDMG: 2

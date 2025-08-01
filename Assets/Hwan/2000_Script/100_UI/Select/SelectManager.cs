@@ -40,9 +40,12 @@ public class SelectManager : MonoBehaviour
 
     private void OpenUI()
     {
-        setCard.AnimatorInter(false);
-        selectUI.SetActive(true);
-        Time.timeScale = 0;
+        if (Time.timeScale != 0)
+        {
+            setCard.ButtonInter(false);
+            selectUI.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     public void CloseUI()
