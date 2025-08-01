@@ -37,6 +37,7 @@ public class SelectManager : MonoBehaviour
     {
         if (Time.timeScale != 0)
         {
+            PlayerInputManager.Instance.StopAllInputs();
             setCard.ButtonInter(false);
             selectUI.SetActive(true);
             Time.timeScale = 0;
@@ -45,6 +46,7 @@ public class SelectManager : MonoBehaviour
 
     public void CloseUI()
     {
+        PlayerInputManager.Instance.AcceptAllInputs();
         selectUI.SetActive(false);
         Time.timeScale = 1;
     }
