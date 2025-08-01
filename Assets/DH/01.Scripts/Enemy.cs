@@ -7,37 +7,37 @@ public class Enemy : MonoBehaviour
     public float damage = 10f;
     public float attackCooldown = 1.0f;
 
-    private Transform player;
-    private bool Attacking = false;
+    private Transform _player;
+    private bool _attacking = false;
 
     void Start()
     {
-        GameObject yunkyu = GameObject.FindWithTag("Player");
-        if (yunkyu != null)
-            player = yunkyu.transform;
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+            _player = player.transform;
     }	
 
     void Update()
     {
-        if (player == null) return;
+        if (_player == null) return;
 
-        float dist = Vector3.Distance(transform.position, player.position);
+        float dist = Vector3.Distance(transform.position, _player.position);
         if (dist > attackRange)
         {
             
-            Vector3 dir = (player.position - transform.position).normalized;
-            transform.position += dir * moveSpeed * Time.deltaTime;
+            Vector3 dir = (_player.position - transform.position).normalized;
+            transform.position += dir * (moveSpeed * Time.deltaTime);
         }
         else
         {
-            if (!Attacking)
+            if (!_attacking)
                 StartCoroutine(DoAttack());
         }
     }
 
     private System.Collections.IEnumerator DoAttack()
     {
-        Attacking = true;
+        _attacking = true;
 
 
         yield return new WaitForSeconds(0.5f);
@@ -51,6 +51,6 @@ public class Enemy : MonoBehaviour
 
         yield return new WaitForSeconds(attackCooldown);
 
-        Attacking = false; 
+        _attacking = false; 
     }
 }
