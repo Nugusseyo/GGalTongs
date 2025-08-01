@@ -21,13 +21,15 @@ public class EnemyScanSkill : SkillSO
     public override void ResetSkillData()
     {
         base.ResetSkillData();
-        CurrentLevel = 1;
+        CurrentLevel = 0;
         Debug.Log("Reset");
         ActiveCount = CurrentLevel + 6;
     }
 
     protected override void Active()
     {
+        // 서칭 사운드 재생
+        
         _enemyList.Clear();
         int limit = ActiveCount;
         
@@ -36,6 +38,7 @@ public class EnemyScanSkill : SkillSO
         {
             if (hit.gameObject.CompareTag("Enemy"))
             {
+                // 발각 사운드 재생
                 _enemyList.Add(hit.gameObject);
                 ActiveCount--;
                 Instantiate(_scanEffect);

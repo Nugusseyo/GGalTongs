@@ -12,7 +12,7 @@ public class Beam : MonoBehaviour
    {
       if (other.gameObject.TryGetComponent<EnemyHP>(out EnemyHP enemy))
       {
-         Attack(enemy);
+         StartCoroutine(Attack(enemy));
       }
    }
 

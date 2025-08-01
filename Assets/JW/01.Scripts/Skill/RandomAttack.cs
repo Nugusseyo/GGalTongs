@@ -10,6 +10,7 @@ public class RandomAttack : SkillSO
     public float AtkDMG = 2;
     private Camera _camera;
     private int _spawnLimit;
+    [SerializeField] private AudioClip _audio;
     
     
     public override void Initialize()
@@ -29,6 +30,7 @@ public class RandomAttack : SkillSO
     {
         for (int i = 0; i < ActiveCount; i++)
         {
+            //사운드 재생 1
             RandomAttackLogic.Instance?.UseSkill();
             Debug.Log(i);
         }

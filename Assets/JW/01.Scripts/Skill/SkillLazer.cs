@@ -18,7 +18,7 @@ public class SkillLazer : SkillSO
     {
         base.ResetSkillData();
         AtkDMG = 3;
-        CurrentLevel = 1;
+        CurrentLevel = 0;
         ActiveCount = CurrentLevel;
     }
 
@@ -26,6 +26,8 @@ public class SkillLazer : SkillSO
     {
         for (int i = 0; i < ActiveCount; i++)
         { 
+            //사운드 재생
+            
             int dir = Random.Range(0, 361);
             Quaternion rotation = Quaternion.Euler(0,0,dir);
         
