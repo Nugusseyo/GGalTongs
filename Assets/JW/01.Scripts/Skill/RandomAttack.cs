@@ -13,12 +13,12 @@ public class RandomAttack : SkillSO
     public void Initialize()
     {
         base.Initialize();
-        _spawnLimit = CurrentLevel + 2;
+        ActiveCount = CurrentLevel;
     }
 
     protected override void Active()
     {
-        for (int i = 0; i < _spawnLimit; i++)
+        for (int i = 0; i < ActiveCount; i++)
         {
             RandomAttackLogic.Instance?.UseSkill();
             Debug.Log(i);
@@ -27,8 +27,11 @@ public class RandomAttack : SkillSO
 
     public override void Upgrade()
     {
-        Initialize();
-        CurrentLevel++;
+        if (CurrentLevel < LevelLimit)
+        {
+            CurrentLevel++;
+            ActiveCount = CurrentLevel;
+        }
         
     }
 }
