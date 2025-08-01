@@ -5,6 +5,12 @@ public enum PlayerStat
     AttakSpeed,
     MoveSpeed,
 }
+public enum CardMoveMode
+{
+    Stoped,
+    Spinning,
+    Pulled
+}
 
 //public enum Card
 //{

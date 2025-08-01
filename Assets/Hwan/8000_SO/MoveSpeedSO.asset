@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e7a7c49e6c66f4e8df6c8d40a9b4ed, type: 3}
   m_Name: MoveSpeedSO
   m_EditorClassIdentifier: 
-  Name: "\uC774\uB3D9\uC18D\uB3C4"
-  Desc: "\uC774\uB3D9\uC18D\uB3C4 +1"
+  Name: "\uC774\uB3D9 \uC18D\uB3C4"
+  Desc: "\uC774\uB3D9 \uC18D\uB3C4 \uC99D\uAC00"
   Image: {fileID: -7740097355486894076, guid: 171b393d18340444295cf27fbec596c6, type: 3}
-  CurrentLevel: 0
-  StartLevel: 0
+  CurrentLevel: 1
+  StartLevel: 1
   Stat: 0
   BonusValue: 1

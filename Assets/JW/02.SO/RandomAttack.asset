@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9780dc479535a514da5d5c03d968b30a, type: 3}
   m_Name: RandomAttack
   m_EditorClassIdentifier: 
-  Icon: {fileID: 484871560781726236, guid: 16a3506e5decdcd4c914fd827594eca3, type: 3}
+  Icon: {fileID: -3527868426062826577, guid: 6fc00bb94f5202746b1138a69058f18c, type: 3}
   Name: "\uC2EC\uD310"
   LevelLimit: 5
   CurrentLevel: 1

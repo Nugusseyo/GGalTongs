@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75695e572395e541a29c4e039837a2f, type: 3}
   m_Name: SkillLazer
   m_EditorClassIdentifier: 
-  Icon: {fileID: -1490557949950732889, guid: b8cacefb8314b47efa966fddda512ade, type: 3}
+  Icon: {fileID: -2329041686176630129, guid: 6fc00bb94f5202746b1138a69058f18c, type: 3}
   Name: "\uB808\uC774\uC800 \uCD1D"
   LevelLimit: 5
   CurrentLevel: 2
