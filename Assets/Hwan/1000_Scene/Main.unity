@@ -966,6 +966,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1220078857414455084, guid: 0e523d22136c7054b95cc5be92eec2d9, type: 3}
+      propertyPath: _skillCard_Prefab
+      value: 
+      objectReference: {fileID: 5374363719572201548, guid: 894927d3d8a4e5f4b8985875e0032fb5, type: 3}
     - target: {fileID: 5690026722789258856, guid: 0e523d22136c7054b95cc5be92eec2d9, type: 3}
       propertyPath: m_Camera
       value: 
