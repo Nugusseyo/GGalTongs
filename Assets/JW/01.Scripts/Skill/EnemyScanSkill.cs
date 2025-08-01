@@ -14,7 +14,7 @@ public class EnemyScanSkill : SkillSO
         base.Initialize();
         if (_playerPos == null)
         {
-            _playerPos = GameObject.Find("Test");
+            _playerPos = GameObject.Find("Player");
         }
     }
 

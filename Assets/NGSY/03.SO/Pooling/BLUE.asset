@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13723c27f230504bbf210090aad1e20, type: 3}
+  m_Name: BLUE
+  m_EditorClassIdentifier: 
+  poolName: BLUE
+  prefab: {fileID: 820384488534141891, guid: d6bea2523fbef98429714f23238923ac, type: 3}
+  count: 50

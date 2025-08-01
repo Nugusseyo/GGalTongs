@@ -11,6 +11,7 @@ public class SelectManager : MonoBehaviour
     public Action StartSelect;
 
     [SerializeField] private GameObject selectUI;
+    private SetCard setCard;
 
     private void Awake()
     {
@@ -25,11 +26,13 @@ public class SelectManager : MonoBehaviour
         }
 
         StartSelect += OpenUI;
+
+        setCard = selectUI.GetComponent<SetCard>();
     }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.T))
         {
             StartSelect?.Invoke();
         }
@@ -37,13 +40,14 @@ public class SelectManager : MonoBehaviour
 
     private void OpenUI()
     {
+        setCard.AnimatorInter(false);
         selectUI.SetActive(true);
         Time.timeScale = 0;
     }
 
     public void CloseUI()
     {
-        selectUI.SetActive(true);
+        selectUI.SetActive(false);
         Time.timeScale = 1;
     }
 }

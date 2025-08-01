@@ -3,29 +3,35 @@ using System.Collections;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public GameObject[] enemyPrefabs;
-    public Transform spawnPoint;
-    public float spawn = 3f;
+    public Transform[] spawnPoints;
+    private float _spawnDelay = 5f;
+    private GameObject enemyGO;
 
-    void Start()
+    private void Start()
     {
-        StartCoroutine(SpawnReturn());
+        StartCoroutine(EnemySpawnCoroutine(_spawnDelay));
     }
 
-    private IEnumerator SpawnReturn()
+    private IEnumerator EnemySpawnCoroutine(float time)
     {
-        while (true)
+        yield return new WaitForSeconds(time);
+        int type = Random.Range(0, 3);
+        if (type == 0)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(spawn);
+            IPoolable enemy = PoolManager.Instance.Pop("RED");
+            enemyGO = enemy.GameObject;
         }
-    }
-
-    private void SpawnEnemy()
-    {
-        if (enemyPrefabs == null || enemyPrefabs.Length == 0) return;
-
-        int ran = Random.Range(0, enemyPrefabs.Length);
-        Instantiate(enemyPrefabs[ran], spawnPoint.position, Quaternion.identity);
+        else if (type == 1)
+        {
+            IPoolable enemy = PoolManager.Instance.Pop("BLUE");
+            enemyGO = enemy.GameObject;
+        }
+        else
+        {
+            IPoolable enemy = PoolManager.Instance.Pop("GRAY");
+            enemyGO = enemy.GameObject;
+        }
+        enemyGO.transform.position = spawnPoints[Random.Range(0, spawnPoints.Length)].position;
+        StartCoroutine(EnemySpawnCoroutine(_spawnDelay));
     }
 }

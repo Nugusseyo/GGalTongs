@@ -32,9 +32,6 @@ public class SelectMove : MonoBehaviour
 
     private void Awake()
     {
-        Animator anim = GetComponent<Animator>();
-        anim.updateMode = AnimatorUpdateMode.UnscaledTime;
-
         _rectT = GetComponent<RectTransform>();
 
         button = GetComponent<Button>();
@@ -86,7 +83,6 @@ public class SelectMove : MonoBehaviour
                 _canMove = false;
                 _moving = false;
                 _ending = false;
-                button.interactable = false;
             }
         }
 
@@ -122,6 +118,6 @@ public class SelectMove : MonoBehaviour
         _moving = false;
         _ending = false;
         coroutine = null;
-        button.interactable = false;
+        button.interactable = true;
     }
 }

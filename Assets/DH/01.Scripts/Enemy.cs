@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IPoolable
 {
     public float moveSpeed = 2f;
     public float attackRange = 1.5f;
@@ -52,5 +52,12 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(attackCooldown);
 
         _attacking = false; 
+    }
+
+    public string ItemName => gameObject.name;
+    public GameObject GameObject => gameObject;
+    public void ResetItem()
+    {
+        
     }
 }

@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75695e572395e541a29c4e039837a2f, type: 3}
   m_Name: SkillLazer
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
-  Name: 
+  Icon: {fileID: -1490557949950732889, guid: b8cacefb8314b47efa966fddda512ade, type: 3}
+  Name: "\uC0AC\uC2E4 \uBE5B\uC740 \uC6D0\uC790\uAC00 \uB9DE\uC558\uB358 \uAC83\uC784!"
   LevelLimit: 5
-  CurrentLevel: 1
-  SkillDesc: 
+  CurrentLevel: 2
+  SkillDesc: "\uB808\uC774\uC800\uB85C \uB41C \uCD1D\uC54C\uC744 \uC3F4 \uC801\uB4E4\uC744
+    \uACF5\uACA9\uD569\uB2C8\uB2E4."
   CoolT: 2
-  CurrentCoolT: 0
+  CurrentCoolT: -17.444706
   _lazer: {fileID: 2622078800461583653, guid: b682660bbd0cd6b408f62818cab0c4e9, type: 3}
   spawnPoint: {fileID: 0}

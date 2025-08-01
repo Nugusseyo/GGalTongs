@@ -20,11 +20,14 @@ public class MoveStarter : MonoBehaviour
 
     void Update()
     {
-        if (CanInput == true && Input.GetKeyDown(KeyCode.Space))
+        if (CanInput == true && Input.GetKeyDown(KeyCode.Y))
         {
             MoveStart?.Invoke();
-            StartCoroutine(ChangeCard());
             count++;
+            if (count <= 1)
+            {
+                StartCoroutine(ChangeCard());
+            }
             if (count >= 2)
             {
                 CanInput = false;
@@ -39,7 +42,7 @@ public class MoveStarter : MonoBehaviour
 
     private IEnumerator ChangeCard()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(0.5f);
         setCard.ChooseCard();
     }
 }
