@@ -90,6 +90,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torchPrefab: {fileID: 1991017630604684396, guid: 1ab00d80684584e41b3748ca1af9b385, type: 3}
+  installationClips:
+  - {fileID: 8300000, guid: 43ebdf4983a51cc45baaf73bec78d888, type: 3}
+  removeClips:
+  - {fileID: 8300000, guid: d71b89890d00bc04083558bfe016daa9, type: 3}
+  - {fileID: 8300000, guid: b6c5097305768ee41b6dff08279ead36, type: 3}
 --- !u!58 &7828010386679497327
 CircleCollider2D:
   m_ObjectHideFlags: 0
