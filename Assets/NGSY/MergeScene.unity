@@ -4564,10 +4564,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3984117862613157972, guid: dcc3850a36045604fa5c6a762e53fed6, type: 3}
-      propertyPath: playerInput
-      value: 
-      objectReference: {fileID: 11400000, guid: b2004e94dccb5864b87917c084ae1fd4, type: 2}
     - target: {fileID: 4237404525291809990, guid: dcc3850a36045604fa5c6a762e53fed6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.11245
@@ -5133,7 +5129,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &1892864723
 RectTransform:
