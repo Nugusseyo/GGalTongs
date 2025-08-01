@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ClickManager : MonoBehaviour
 {
+    public bool CanGet = true;
 
     private Button button;
     [SerializeField] private CardSetter _setter;
@@ -17,17 +18,19 @@ public class ClickManager : MonoBehaviour
         button = GetComponent<Button>();
         _setter = GetComponent<CardSetter>();
 
-        button.onClick.AddListener(() => _setter.Use());
-        if (_isNotS)
-        {
-            button.onClick.AddListener(() => _setter.Refresh());
-        }
-        button.onClick.AddListener(() => StartCoroutine(Close()));
-        button.onClick.AddListener(() => FindAnyObjectByType<SetCard>().ButtonInter(false));
+        button.onClick.AddListener(() => {
+            if (CanGet) StartCoroutine(Close());
+        });
     }
 
     private IEnumerator Close()
     {
+        _setter.Use();
+        if (_isNotS)
+        {
+            _setter.Refresh();
+        }
+        FindAnyObjectByType<SetCard>().ButtonInter(false);
         yield return new WaitForSecondsRealtime(waitTime);
         SelectManager.Instance.CloseUI();
     }

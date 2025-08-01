@@ -21,7 +21,7 @@ public class ExpManager : MonoBehaviour
         }
         CurrentLevel = 0;
         currentExp = 0;
-        goalExp = 10;
+        goalExp = 5;
 
         expBar = GetComponentInChildren<ExpBar>();
     }
