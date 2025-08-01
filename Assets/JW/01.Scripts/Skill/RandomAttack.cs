@@ -21,6 +21,7 @@ public class RandomAttack : SkillSO
         for (int i = 0; i < _spawnLimit; i++)
         {
             RandomAttackLogic.Instance?.UseSkill();
+            Debug.Log(i);
         }
     }
 
@@ -28,5 +29,6 @@ public class RandomAttack : SkillSO
     {
         Initialize();
         CurrentLevel++;
+        
     }
 }

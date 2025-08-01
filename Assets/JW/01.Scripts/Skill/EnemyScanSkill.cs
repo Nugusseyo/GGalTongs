@@ -9,14 +9,13 @@ public class EnemyScanSkill : SkillSO
     [SerializeField] private GameObject _playerPos; //플레이어 위치를 가져오기 위해 오브젝트 가져옴
     [SerializeField] private GameObject _scanEffect; 
     private int _searchLimit;
-    private float _radious = 15;
+    [SerializeField] private float _radious = 15;
     public override void Initialize()
     {
         base.Initialize();
         _searchLimit = CurrentLevel + 6;
         if (_playerPos == null)
         {
-            Debug.Log("1231231");
             _playerPos = GameObject.Find("Test");
         }
     }
@@ -49,7 +48,6 @@ public class EnemyScanSkill : SkillSO
         {
             CurrentLevel++;
             _searchLimit = CurrentLevel + CurrentLevel;
-            CoolT -= 0.1f;
         }
     }
 }
