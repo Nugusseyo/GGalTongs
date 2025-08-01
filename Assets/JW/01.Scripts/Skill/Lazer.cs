@@ -8,7 +8,7 @@ public class Lazer : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
         {
-            
+            // enemy.TakeDamage();
         }
     }
 }

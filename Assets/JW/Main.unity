@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 84993574}
   - component: {fileID: 84993576}
   - component: {fileID: 84993575}
+  - component: {fileID: 84993577}
   m_Layer: 0
   m_Name: Test
   m_TagString: Untagged
@@ -285,6 +286,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &84993577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84993571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d063c13b80bcddc4c8d14f878aa15316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effect: {fileID: 3666323531000064562, guid: 35cb37f7105e305479d2243c17a8fd64, type: 3}
 --- !u!1 &177331638
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,7 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11bd23f272c6c964da3d5a9f828c8a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skill: {fileID: 11400000, guid: acc321791a2b77340b742855bbc5e3fd, type: 2}
+  _skill: {fileID: 11400000, guid: f28b09bacec56704789cf745f13c2fd0, type: 2}
   _skill1: {fileID: 0}
 --- !u!114 &334067484
 MonoBehaviour:
@@ -1209,7 +1223,7 @@ GameObject:
   - component: {fileID: 1209555107}
   m_Layer: 0
   m_Name: CinemachineCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
