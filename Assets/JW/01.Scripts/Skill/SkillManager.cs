@@ -24,6 +24,7 @@ public class SkillManager : MonoBehaviour
         if (!SkillList.Contains(skillSo))
         {
            skillSo.Initialize();
+           skillSo.ResetSkillData();
            skillSo.CurrentLevel = 1;
            
            SkillList.Add(skillSo); 
@@ -32,6 +33,10 @@ public class SkillManager : MonoBehaviour
 
     private void Update()
     {
+        if (Keyboard.current.qKey.wasPressedThisFrame)
+        {
+            SceneManager.LoadScene(0);
+        }
         float dt = Time.deltaTime;
         if (SkillList != null)
         {

@@ -32,7 +32,7 @@ public abstract class SkillSO : ScriptableObject
         }
     }
 
-    protected virtual void ResetSkillData()
+    public virtual void ResetSkillData()
     {
         // CurrentLevel = 1;
         CurrentCoolT = CoolT;
