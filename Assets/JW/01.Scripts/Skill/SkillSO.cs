@@ -17,9 +17,12 @@ public abstract class SkillSO : ScriptableObject
     [Header("쿨타임")] 
     public float CoolT;
     public float CurrentCoolT;
+    [Header("액티브 카운트")]
+    public int ActiveCount;
+
     private bool _isSubs = false;
     
-    public virtual void Initialize( )
+    public virtual void Initialize()
     {
         CurrentCoolT = CoolT;
         if (!_isSubs)
@@ -29,9 +32,15 @@ public abstract class SkillSO : ScriptableObject
         }
     }
 
+    protected virtual void ResetSkillData()
+    {
+        // CurrentLevel = 1;
+        CurrentCoolT = CoolT;
+    }
+    
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        CurrentLevel = 1;
+        ResetSkillData();
     }
 
     protected abstract void Active();

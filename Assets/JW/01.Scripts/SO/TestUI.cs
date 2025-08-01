@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class TestUI : MonoBehaviour
 {
-    [SerializeField] private SkillSO _skill;
-    [SerializeField] private SkillSO _skill1;
-    [SerializeField] private SkillSO _skill2;
+    [SerializeField] private SkillSO[] _skill;
 
     public void Click()
-    { 
-        if (SkillManager.Instance.SkillList.Contains(_skill))
+    {
+        int i = 0;
+        if (SkillManager.Instance.SkillList.Contains(_skill[i]))
         {
-            _skill.Upgrade();
-            Debug.Log($"Upgrade , {SkillManager.Instance.SkillList.Contains(_skill)}");
+            _skill[i].Upgrade();
+            Debug.Log($"Upgrade , {SkillManager.Instance.SkillList.Contains(_skill[i])}");
         }
-        else if (!SkillManager.Instance.SkillList.Contains(_skill))
+        else if (!SkillManager.Instance.SkillList.Contains(_skill[i]))
         {
-            SkillManager.Instance.Add(_skill);
+            i++;
+            SkillManager.Instance.Add(_skill[i]);
         }
     }
 }

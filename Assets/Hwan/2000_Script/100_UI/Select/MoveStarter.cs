@@ -43,7 +43,6 @@ public class MoveStarter : MonoBehaviour
     private IEnumerator ChangeCard()
     {
         yield return new WaitForSecondsRealtime(0.5f);
-        setCard.AnimatorInter(false);
         setCard.ChooseCard();
     }
 }
