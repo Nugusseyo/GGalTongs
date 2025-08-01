@@ -25,11 +25,19 @@ public class SelectMove : MonoBehaviour
 
     public void ChangeMode(int value)
     {
-        _mode += value;
+        _mode = (CardMoveMode)value;
+        if (_mode == CardMoveMode.Stoped)
+        {
+            button.interactable = true;
+        }
     }
     public void ChangeMode()
     {
         _mode++;
+        if (_mode == CardMoveMode.Stoped)
+        {
+            button.interactable = true;
+        }
     }
 
     [SerializeField] private CardMoveMode _mode = CardMoveMode.Stoped;
@@ -40,11 +48,6 @@ public class SelectMove : MonoBehaviour
         {
             case CardMoveMode.Stoped:
                 _rectT.anchoredPosition = new Vector2(_rectT.anchoredPosition.x, _stopTargetY);
-                button.interactable = true;
-                break;
-            case CardMoveMode.Spinning:
-                _rectT.anchoredPosition -= new Vector2(0, _speed) * Time.unscaledDeltaTime;
-                button.interactable = false;
                 break;
             case CardMoveMode.Pulled:
                 if (stopCo == null)
@@ -62,7 +65,8 @@ public class SelectMove : MonoBehaviour
     private IEnumerator StopCo()
     {
         yield return new WaitForSecondsRealtime(_interval);
-        ChangeMode(-2);
+        ChangeMode(0);
+        stopCo = null;
     }
 
     private void WarpCheck()

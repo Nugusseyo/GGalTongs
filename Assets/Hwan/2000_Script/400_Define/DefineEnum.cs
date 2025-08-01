@@ -8,7 +8,6 @@ public enum PlayerStat
 public enum CardMoveMode
 {
     Stoped,
-    Spinning,
     Pulled
 }
 
