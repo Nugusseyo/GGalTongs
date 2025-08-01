@@ -10,6 +10,8 @@ public class RandomAttack : SkillSO
     public float AtkDMG = 2;
     private Camera _camera;
     private int _spawnLimit;
+    
+    
     public override void Initialize()
     {
         base.Initialize();
@@ -18,9 +20,10 @@ public class RandomAttack : SkillSO
         Debug.Log("123");
     }
 
-    protected override void ResetSkillData()
+    public override void ResetSkillData()
     {
         base.ResetSkillData();
+        CurrentLevel = 1;
         ActiveCount = CurrentLevel;
         Debug.Log("Reset");
     }

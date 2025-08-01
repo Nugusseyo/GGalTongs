@@ -18,9 +18,10 @@ public class EnemyScanSkill : SkillSO
         }
     }
 
-    protected override void ResetSkillData()
+    public override void ResetSkillData()
     {
         base.ResetSkillData();
+        CurrentLevel = 1;
         ActiveCount = CurrentLevel + 6;
     }
 
@@ -43,7 +44,8 @@ public class EnemyScanSkill : SkillSO
             }
         }
         Debug.Log($"hits 카운트 : {hits.Length}, 에너미 리스트 : {_enemyList}");
-        ResetSkillData();
+        ActiveCount = CurrentLevel + 6;
+        
     }
 
     public override void Upgrade()
@@ -53,7 +55,6 @@ public class EnemyScanSkill : SkillSO
             CurrentLevel++;
             
             Debug.Log(CurrentLevel);
-            ResetSkillData();
         }
     }
 }

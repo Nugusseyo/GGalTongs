@@ -14,10 +14,11 @@ public class SkillLazer : SkillSO
         ActiveCount = CurrentLevel;
     }
 
-    protected override void ResetSkillData()
+    public override void ResetSkillData()
     {
         base.ResetSkillData();
         AtkDMG = 3;
+        CurrentLevel = 1;
         ActiveCount = CurrentLevel;
     }
 

@@ -6,21 +6,17 @@ public class TestUI : MonoBehaviour
 
     public void Click()
     {
-        for (int i = 0; i < 3; i++)
+        SkillManager.Instance.Add(_skill[1]);
+        if (SkillManager.Instance.SkillList.Contains(_skill[1]))
         {
-            SkillManager.Instance.Add(_skill[i]);
+            _skill[1].Upgrade();
+            Debug.Log($"Upgrade , {SkillManager.Instance.SkillList.Contains(_skill[1])}");
         }
-        // int i = 0;
-        // if (SkillManager.Instance.SkillList.Contains(_skill[i]))
-        // {
-        //     _skill[i].Upgrade();
-        //     Debug.Log($"Upgrade , {SkillManager.Instance.SkillList.Contains(_skill[i])}");
-        // }
-        // else if (!SkillManager.Instance.SkillList.Contains(_skill[i]))
-        // {
-        //     i++;
-        //     Debug.Log(12);
-        //     SkillManager.Instance.Add(_skill[i]);
+        else if (!SkillManager.Instance.SkillList.Contains(_skill[1]))
+        {
+            Debug.Log(12);
+            SkillManager.Instance.Add(_skill[1]);
         }
     }
+}
 
