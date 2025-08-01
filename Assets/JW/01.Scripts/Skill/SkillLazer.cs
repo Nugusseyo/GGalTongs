@@ -10,7 +10,7 @@ public class SkillLazer : SkillSO
     public override void Initialize()
     {
         base.Initialize();
-        spawnPoint = GameObject.Find("Test");
+        spawnPoint = GameObject.Find("Player");
         _spawncount = CurrentLevel;
     }
 

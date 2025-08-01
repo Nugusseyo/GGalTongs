@@ -16,7 +16,7 @@ public class EnemyScanSkill : SkillSO
         _searchLimit = CurrentLevel + 6;
         if (_playerPos == null)
         {
-            _playerPos = GameObject.Find("Test");
+            _playerPos = GameObject.Find("Player");
         }
     }
     protected override void Active()

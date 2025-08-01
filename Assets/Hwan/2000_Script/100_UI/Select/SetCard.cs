@@ -42,8 +42,16 @@ public class SetCard : MonoBehaviour
         CardDictionary.Add(9, Instantiate(_statCard_2_Prefab.GetComponent<CardSetter>(), CardDictionary[3].transform));
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            ChooseCard();
+        }
+    }
     public void ChooseCard()
     {
+        Debug.Log("¹Ù²ñ");
         for (int i = 1; i <= 3; i++)
         {
             int s2 = 0;
@@ -67,7 +75,7 @@ public class SetCard : MonoBehaviour
         for (int i = 1; i <= 3; i++)
         {
             GetComponent<MoveStarter>().MoveStart += CardDictionary[i].GetComponent<SelectMove>().StartMove;
-            CardDictionary[i].GetComponent<Button>().interactable = false;
+            CardDictionary[i].GetComponent<Animator>().updateMode = AnimatorUpdateMode.UnscaledTime;
         }
 
 
@@ -85,6 +93,13 @@ public class SetCard : MonoBehaviour
         CardDictionary[9].GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -1080);
     }
 
+    public void AnimatorInter(bool boo)
+    {
+        for (int i = 1; i <= 3; i++)
+        {
+            CardDictionary[i].GetComponent<Button>().interactable = boo;
+        }
+    }
     private void OnEnable()
     {
         ChooseCard();

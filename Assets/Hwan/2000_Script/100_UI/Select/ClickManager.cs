@@ -16,6 +16,7 @@ public class ClickManager : MonoBehaviour
 
         button.onClick.AddListener(() => setter.Use());
         button.onClick.AddListener(() => StartCoroutine(Close()));
+        button.onClick.AddListener(() => FindAnyObjectByType<SetCard>().AnimatorInter(false));
     }
 
     private IEnumerator Close()
