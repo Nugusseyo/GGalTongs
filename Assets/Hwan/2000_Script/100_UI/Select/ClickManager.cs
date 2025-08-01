@@ -15,6 +15,7 @@ public class ClickManager : MonoBehaviour
         setter = GetComponent<CardSetter>();
 
         button.onClick.AddListener(() => setter.Use());
+        button.onClick.AddListener(() => setter.Refresh());
         button.onClick.AddListener(() => StartCoroutine(Close()));
         button.onClick.AddListener(() => FindAnyObjectByType<SetCard>().ButtonInter(false));
     }

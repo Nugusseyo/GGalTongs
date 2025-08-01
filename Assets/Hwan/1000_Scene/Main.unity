@@ -385,6 +385,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd24c4456c9d4a4dbf66314d31241de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skills:
+  - {fileID: 11400000, guid: acc321791a2b77340b742855bbc5e3fd, type: 2}
+  - {fileID: 11400000, guid: f28b09bacec56704789cf745f13c2fd0, type: 2}
+  - {fileID: 11400000, guid: 8b204f5870750c8438c452d595386c39, type: 2}
   SkillList: []
 --- !u!4 &207798137
 Transform:

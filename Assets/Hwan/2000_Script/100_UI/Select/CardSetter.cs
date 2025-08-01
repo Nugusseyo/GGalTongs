@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,8 +16,13 @@ public class CardSetter : MonoBehaviour
 
     public Action Use { get; private set; }
 
+    private SkillSO _nowSkill;
+    private StatCardSO _nowStat;
+
     public void SetCard(SkillSO skill)
     {
+        _nowSkill = skill;
+
         Image.sprite = skill.Icon;
         Desc.text = skill.SkillDesc;
         Name.text = skill.Name;
@@ -42,5 +48,17 @@ public class CardSetter : MonoBehaviour
         Name.text = stat.Name;
         Level.text = $"·¹º§ : {stat.CurrentLevel}";
         Use = stat.Apply;
+    }
+
+    public void Refresh()
+    {
+        if (_nowSkill == null)
+        {
+            SetCard(_nowStat);
+        }
+        else
+        {
+            SetCard(_nowSkill);
+        }
     }
 }
