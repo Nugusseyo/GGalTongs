@@ -43,6 +43,8 @@ public class CardSetter : MonoBehaviour
     }
     public void SetCard(StatCardSO stat)
     {
+        _nowStat = stat;
+
         Image.sprite = stat.Image;
         Desc.text = stat.Desc;
         Name.text = stat.Name;
