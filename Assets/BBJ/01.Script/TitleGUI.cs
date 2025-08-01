@@ -4,15 +4,15 @@ using UnityEngine.SceneManagement;
 public class TitleGUI : MonoBehaviour
 {
     [SerializeField] private GameObject settingGUI;
-    private void OnEnd()
+    public void OnEnd()
     {
         Application.Quit();
     }
-    private void OnSettingUI()
+    public void OnSettingUI()
     {
         settingGUI.SetActive(true);
     }
-    private void StartIngame()
+    public void StartIngame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
