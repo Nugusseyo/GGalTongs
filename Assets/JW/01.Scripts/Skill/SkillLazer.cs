@@ -36,7 +36,6 @@ public class SkillLazer : SkillSO
         {
             CurrentLevel++;
             _spawncount = CurrentLevel;
-            CoolT -= 0.1f;
         }
     }
 }

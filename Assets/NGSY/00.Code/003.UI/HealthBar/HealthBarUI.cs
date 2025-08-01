@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,13 +8,15 @@ public class HealthBarUI : MonoBehaviour
 {
     public static HealthBarUI Instance;
 
-    [SerializeField] private TextMeshProUGUI _healthText;
+    [SerializeField] private GunFireAudioClip audioPlayer;
+    [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private RectTransform hpBar;
+    private GunFireCameraShaker _cameraShaker;
 
     public float MaxHealth { get; private set; }
-    private float curHealth;
-    private float maxBarWidth;
-    private float targetRatio = 1f;
+    private float _curHealth;
+    private float _maxBarWidth;
+    private float _targetRatio = 1f;
 
     private void Awake()
     {
@@ -23,40 +26,47 @@ public class HealthBarUI : MonoBehaviour
             Destroy(gameObject);
 
         MaxHealth = 25;
-        curHealth = MaxHealth;
-        maxBarWidth = hpBar.sizeDelta.x;
-        UpdateHealthBar(curHealth);
+        _curHealth = MaxHealth;
+        _maxBarWidth = hpBar.sizeDelta.x;
+        UpdateHealthBar(_curHealth);
+    }
+
+    private void Start()
+    {
+        _cameraShaker = GameObject.Find("Player").GetComponentInChildren<GunFireCameraShaker>();
     }
 
     private void UpdateHealthBar(float health)
     {
-        targetRatio = Mathf.Clamp01(health / MaxHealth);
-        _healthText.text = $"{(int)curHealth} / {(int)MaxHealth}";
+        _targetRatio = Mathf.Clamp01(health / MaxHealth);
+        healthText.text = $"{(int)_curHealth} / {(int)MaxHealth}";
     }
 
     public void PlusMaxHealth(float value)
     {
         MaxHealth += value;
-        curHealth += value;
-        UpdateHealthBar(curHealth);
+        _curHealth += value;
+        UpdateHealthBar(_curHealth);
     }
 
     public void PlayerDamaged(float amount)
     {
-        curHealth = Mathf.Clamp(curHealth - amount, 0, MaxHealth);
-        UpdateHealthBar(curHealth);
+        _curHealth = Mathf.Clamp(_curHealth - amount, 0, MaxHealth);
+        UpdateHealthBar(_curHealth);
+        _cameraShaker.ShakeCamera();
+        audioPlayer.PlayShotSound();
     }
 
     public void PlusCurrentHealth(float value)
     {
-        curHealth = Mathf.Clamp(curHealth + value, 0, MaxHealth);
-        UpdateHealthBar(curHealth);
+        _curHealth = Mathf.Clamp(_curHealth + value, 0, MaxHealth);
+        UpdateHealthBar(_curHealth);
     }
 
     private void Update()
     {
         float currentWidth = hpBar.sizeDelta.x;
-        float targetWidth = maxBarWidth * targetRatio;
+        float targetWidth = _maxBarWidth * _targetRatio;
 
         float smoothedWidth = Mathf.Lerp(currentWidth, targetWidth, Time.deltaTime * 10f); // 속도는 조절 가능
 

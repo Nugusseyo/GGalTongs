@@ -18,12 +18,12 @@ MonoBehaviour:
   CurrentLevel: 1
   SkillDesc: 
   CoolT: 2
-  CurrentT: 0.47756803
+  CurrentCoolT: 0.83041584
   _enemyList:
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   _playerPos: {fileID: 0}
   _scanEffect: {fileID: 8404824736157331646, guid: 76d5ddd535910aa4ea2d6d7865377074, type: 3}
+  _radious: 15
