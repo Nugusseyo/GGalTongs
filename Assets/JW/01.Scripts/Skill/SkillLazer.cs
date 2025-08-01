@@ -6,17 +6,24 @@ public class SkillLazer : SkillSO
 {
     [SerializeField] private GameObject _lazer;
     [SerializeField] private GameObject spawnPoint;
-    private int _spawncount;
+    public float AtkDMG = 3f;
     public override void Initialize()
     {
         base.Initialize();
         spawnPoint = GameObject.Find("Player");
-        _spawncount = CurrentLevel;
+        ActiveCount = CurrentLevel;
+    }
+
+    protected override void ResetSkillData()
+    {
+        base.ResetSkillData();
+        AtkDMG = 3;
+        ActiveCount = CurrentLevel;
     }
 
     protected override void Active()
     {
-        for (int i = 0; i < _spawncount; i++)
+        for (int i = 0; i < ActiveCount; i++)
         { 
             int dir = Random.Range(0, 361);
             Quaternion rotation = Quaternion.Euler(0,0,dir);
@@ -35,7 +42,8 @@ public class SkillLazer : SkillSO
         if (CurrentLevel < LevelLimit)
         {
             CurrentLevel++;
-            _spawncount = CurrentLevel;
+            AtkDMG++;
+            ActiveCount = CurrentLevel;
         }
     }
 }

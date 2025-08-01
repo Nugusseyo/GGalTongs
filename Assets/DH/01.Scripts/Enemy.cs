@@ -56,6 +56,7 @@ public class Enemy : MonoBehaviour, IPoolable
 
     private void OnDestroy()
     {
+        if (TorchItemUi.Instance == null) return;
         float ran = Random.Range(0, 100);
         if (ran < 7)
         {

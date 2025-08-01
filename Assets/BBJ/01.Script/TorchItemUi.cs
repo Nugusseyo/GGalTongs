@@ -16,6 +16,10 @@ public class TorchItemUi : MonoBehaviour
         {
             Instance = this;
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     private void Start()
     {
