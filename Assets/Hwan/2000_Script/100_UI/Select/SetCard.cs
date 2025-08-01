@@ -34,26 +34,16 @@ public class SetCard : MonoBehaviour
 
     private void MakeCard()
     {
-        CardDictionary.Add(1, Instantiate(_skillCard_Prefab.GetComponent<CardSetter>(), transform));
         CardDictionary.Add(2, Instantiate(_statCard_1_Prefab.GetComponent<CardSetter>(), transform));
         CardDictionary.Add(3, Instantiate(_statCard_2_Prefab.GetComponent<CardSetter>(), transform));
 
-        CardDictionary.Add(4, Instantiate(_skillCard_Prefab.GetComponent<CardSetter>(), CardDictionary[1].transform));
         CardDictionary.Add(5, Instantiate(_statCard_1_Prefab.GetComponent<CardSetter>(), CardDictionary[2].transform));
         CardDictionary.Add(6, Instantiate(_statCard_2_Prefab.GetComponent<CardSetter>(), CardDictionary[3].transform));
 
-        CardDictionary.Add(7, Instantiate(_skillCard_Prefab.GetComponent<CardSetter>(), CardDictionary[1].transform));
         CardDictionary.Add(8, Instantiate(_statCard_1_Prefab.GetComponent<CardSetter>(), CardDictionary[2].transform));
         CardDictionary.Add(9, Instantiate(_statCard_2_Prefab.GetComponent<CardSetter>(), CardDictionary[3].transform));
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            ChooseCard();
-        }
-    }
     public void ChooseCard()
     {
         for (int i = 1; i <= 3; i++)
