@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: EnemyScanSkill
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: c862ab995361fe24ca781068c236cec0, type: 3}
-  Name: "\uC2A4\uCE90\uB108"
+  Name: "\uC57C\uAC04 \uD22C\uC2DC\uACBD"
   LevelLimit: 5
-  CurrentLevel: 1
+  CurrentLevel: 2
   SkillDesc: "\uC8FC\uBCC0\uC758 \uC801\uB4E4\uC744 \uAC10\uC9C0\uD558\uC5EC \uBCF4\uB77C\uC0C9
     \uC6D0\uC73C\uB85C \uD45C\uC2DC\uD574\uC90D\uB2C8\uB2E4."
   CoolT: 1
-  CurrentCoolT: 1.750247
+  CurrentCoolT: 0.359359
+  ActiveCount: 8
   _enemyList: []
   _playerPos: {fileID: 0}
   _scanEffect: {fileID: 8404824736157331646, guid: 76d5ddd535910aa4ea2d6d7865377074, type: 3}

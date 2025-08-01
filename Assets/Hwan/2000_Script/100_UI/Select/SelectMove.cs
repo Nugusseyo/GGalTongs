@@ -112,7 +112,7 @@ public class SelectMove : MonoBehaviour
 
     private IEnumerator GoHome()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(2.25f);
         _rectT.anchoredPosition = new Vector2(_rectT.anchoredPosition.x, _stopTargetY);
         _canMove = false;
         _moving = false;
