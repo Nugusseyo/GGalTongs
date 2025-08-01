@@ -391,11 +391,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87eb8b7c48c1daf4f8e0df505160f4dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spinSpeed: 17500
-  _stopTime: 2
+  _spinSpeed: 12500
+  _stopTime: 2.5
   _stopValue: 100
-  _slowValue: -800
-  _endSpeed: 4000
+  _slowValue: -1000
+  _endSpeed: 8000
   _stopTargetY: -230
 --- !u!114 &1756514587418782350
 MonoBehaviour:

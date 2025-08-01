@@ -35,7 +35,7 @@ public class CardSetter : MonoBehaviour
         Image.sprite = stat.Image;
         Desc.text = stat.Desc;
         Name.text = stat.Name;
-        Level.text = $"레벨 : {stat.Level}";
+        Level.text = $"레벨 : {stat.CurrentLevel}";
         Use = stat.Apply;
     }
 }

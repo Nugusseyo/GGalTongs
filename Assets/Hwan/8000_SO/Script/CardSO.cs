@@ -9,5 +9,12 @@ public class CardSO : ScriptableObject
     [Header("그림")]
     public Sprite Image;
     [Header("가지고 있는 카드 수")]
-    public int Level;
+    public int CurrentLevel;
+    [Header("시작　레벨")]
+    public int StartLevel = 1;
+
+    public void First()
+    {
+        CurrentLevel = StartLevel;
+    }
 }

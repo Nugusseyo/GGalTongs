@@ -17,19 +17,19 @@ public class StatCardSO : CardSO
         {
             case PlayerStat.AttakSpeed:
                 GunFire.Instance.minusAttackSpeed += BonusValue;
-                Level++;
+                CurrentLevel++;
                 break;
             case PlayerStat.Damage:
                 GunFire.Instance.BulletPowerUp(BonusValue);
-                Level++;
+                CurrentLevel++;
                 break;
             case PlayerStat.MaxHp:
                 HealthBarUI.Instance.PlusMaxHealth(BonusValue);
-                Level++;
+                CurrentLevel++;
                 break;
             case PlayerStat.MoveSpeed:
                 PlayerMovement.Instance.plusMoveSpeed += BonusValue;
-                Level++;
+                CurrentLevel++;
                 break;
         }
     }

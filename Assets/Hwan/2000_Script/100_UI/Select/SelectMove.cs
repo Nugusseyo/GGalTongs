@@ -26,8 +26,6 @@ public class SelectMove : MonoBehaviour
 
     [SerializeField] private float _stopTargetY = 0f;
 
-    private Coroutine coroutine;
-
     private Button button;
 
     private void Awake()
@@ -91,14 +89,14 @@ public class SelectMove : MonoBehaviour
 
     public void StartMove()
     {
-        if (!_moving && coroutine == null)
+        if (!_moving)
         {
             MoveStart();
         }
-        else if (coroutine == null)
+        else if (_moving && !_stoping)
         {
             _stoping = true;
-            coroutine = StartCoroutine(GoHome());
+            StartCoroutine(GoHome());
         }
     }
 
@@ -112,12 +110,12 @@ public class SelectMove : MonoBehaviour
 
     private IEnumerator GoHome()
     {
-        yield return new WaitForSecondsRealtime(2.25f);
+        yield return new WaitForSecondsRealtime(3f);
         _rectT.anchoredPosition = new Vector2(_rectT.anchoredPosition.x, _stopTargetY);
         _canMove = false;
         _moving = false;
         _ending = false;
-        coroutine = null;
+        _stoping = false;
         button.interactable = true;
     }
 }
