@@ -32,7 +32,7 @@ public class ExpManager : MonoBehaviour
         expBar.GrowingExpBar();
         if (currentExp < goalExp) return;
         Debug.Log("넘어갔따");
-        goalExp = 10 * (CurrentLevel + 1);
+        goalExp = 7 * (CurrentLevel + 1);
         CurrentLevel++;
         currentExp = 0;
         float ran = Random.Range(0, 10);
