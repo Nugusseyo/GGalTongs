@@ -22,7 +22,7 @@ public class SelectMove : MonoBehaviour
     [SerializeField] private CardSetter _cardSetter;
     [SerializeField] private RectMask2D _rectMask;
 
-    [SerializeField] private CardMoveMode _mode = CardMoveMode.Stoped;
+    private CardMoveMode _mode = CardMoveMode.Pulled;
     private void Awake()
     {
         _cardSetter = GameObject.Find("SkillOut").GetComponent<CardSetter>();

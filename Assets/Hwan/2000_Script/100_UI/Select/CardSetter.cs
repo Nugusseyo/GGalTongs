@@ -52,8 +52,6 @@ public class CardSetter : MonoBehaviour
     }
     public void SetCard(StatCardSO stat)
     {
-        Debug.Log("sdfs");
-
         _nowStat = stat;
 
         Image.sprite = stat.Image;
