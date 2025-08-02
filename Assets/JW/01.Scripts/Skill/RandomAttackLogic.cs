@@ -24,7 +24,7 @@ public class RandomAttackLogic : MonoBehaviour
         float posY = Random.Range(bottomLeft.y - 5, topright.y + 5);
         Vector3 spawnPos = new Vector3(posX, posY, 0);
 
-        GameObject effect = Instantiate(_effect, spawnPos, Quaternion.identity);
+        GameObject effect = Instantiate(_effect, spawnPos, Quaternion.Euler(0,0,180));
         
         Destroy(effect , 2f);
         

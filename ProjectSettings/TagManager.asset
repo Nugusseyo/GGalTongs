@@ -47,5 +47,11 @@ TagManager:
   - name: ScanEffect
     uniqueID: 1178706981
     locked: 0
+  - name: Beam
+    uniqueID: 2485886221
+    locked: 0
+  - name: Lazer
+    uniqueID: 929596699
+    locked: 0
   m_RenderingLayers:
   - Default

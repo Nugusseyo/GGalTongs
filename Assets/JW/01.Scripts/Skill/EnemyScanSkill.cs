@@ -22,7 +22,6 @@ public class EnemyScanSkill : SkillSO
     {
         base.ResetSkillData();
         CurrentLevel = 0;
-        Debug.Log("Reset");
         ActiveCount = CurrentLevel + 6;
     }
 
@@ -57,7 +56,6 @@ public class EnemyScanSkill : SkillSO
         {
             CurrentLevel++;
             
-            Debug.Log(CurrentLevel);
         }
     }
 }
