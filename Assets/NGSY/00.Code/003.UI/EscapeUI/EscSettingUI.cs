@@ -28,6 +28,11 @@ public class EscSettingUI : MonoBehaviour
         settingUI.SetActive(playerInput.isGamePaused);
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
 
     private void GameStopHandle()
     {
