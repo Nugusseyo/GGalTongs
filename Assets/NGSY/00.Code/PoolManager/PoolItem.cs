@@ -14,7 +14,6 @@ public class PoolItem : ScriptableObject
         IPoolable item = prefab.GetComponent<IPoolable>();
         if(item == null)
         {
-            Debug.LogWarning($"Can not find iPoolable in {prefab.name}");
             prefab = null;
             return;
         }

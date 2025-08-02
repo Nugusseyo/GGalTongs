@@ -26,7 +26,6 @@ public class NewMonoBehaviorScript : MonoBehaviour
     public void TakeDamage(float amount)
     {
         CurrentHp = Mathf.Clamp(CurrentHp - amount, 0f, MaxHp);
-        Debug.Log($"남은 HP: {CurrentHp}/{MaxHp}");
 
         if (CurrentHp <= 0f)
         {

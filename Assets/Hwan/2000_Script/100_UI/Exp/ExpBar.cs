@@ -10,7 +10,6 @@ public class ExpBar : MonoBehaviour
     public void GrowingExpBar()
     {
         _targetRatio = Mathf.Clamp01((float)ExpManager.Instance.currentExp / ExpManager.Instance.goalExp); // 0 ~ 1 사이로 제한
-        Debug.Log($"trati{_targetRatio}, curexp{ExpManager.Instance.currentExp}, goalExp{ExpManager.Instance.goalExp}");
     }
 
     public void ResetExpBar()

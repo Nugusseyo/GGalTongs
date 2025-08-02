@@ -44,7 +44,6 @@ public class FillBarContoller : MonoBehaviour
         if (currentXP >= xpToLevel)
         {
             currentXP -= xpToLevel;
-            OnLevelUp();
             UpdateUI();
         }
     }
@@ -53,11 +52,6 @@ public class FillBarContoller : MonoBehaviour
     {
         if (fillImage != null)
             fillImage.fillAmount = Mathf.Clamp01(currentXP / xpToLevel);
-    }
-
-    private void OnLevelUp()
-    {
-        Debug.Log("레벨업!"); // 레벨업 이펙트, 보상 등 처리
     }
 
     public void ResetXP()
