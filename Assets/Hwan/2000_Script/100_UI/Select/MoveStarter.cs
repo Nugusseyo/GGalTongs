@@ -11,9 +11,13 @@ public class MoveStarter : MonoBehaviour
 
     private bool isFirst = true;
 
+    private AudioSource _audio;
+    [SerializeField] private AudioClip _clip;
+
     private void Awake()
     {
         setCard = GetComponent<SetCard>();
+        _audio = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -30,6 +34,7 @@ public class MoveStarter : MonoBehaviour
 
     private void ChangeCard()
     {
+        _audio.PlayOneShot(_clip);
         MoveStart?.Invoke();
         setCard.ChooseCard();
     }

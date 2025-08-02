@@ -693,6 +693,7 @@ MonoBehaviour:
   <Level>k__BackingField: {fileID: 782371683214499291}
   _nowSkill: {fileID: 0}
   _isInside: 0
+  ChildCardSetter: {fileID: 0}
 --- !u!114 &-3209850051759203426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,10 +775,9 @@ MonoBehaviour:
   _isNotS: 1
   _stopTargetY: 300
   _speed: 17500
-  _interval: 1.5
+  _interval: 1.68
   _cardSetter: {fileID: 0}
   _rectMask: {fileID: 0}
-  _mode: 0
 --- !u!114 &-3458294101460161143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,9 +790,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bc4f360329a9941b9919fb71298f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Setter: {fileID: 0}
+  CanGet: 1
+  _setter: {fileID: 0}
   waitTime: 1
   _isNotS: 1
+  _clip: {fileID: 8300000, guid: 2ead53f2a2f26034d9502d053e9bff7f, type: 3}
 --- !u!1 &7959940074028469878
 GameObject:
   m_ObjectHideFlags: 0

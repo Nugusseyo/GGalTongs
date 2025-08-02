@@ -13,8 +13,13 @@ public class ClickManager : MonoBehaviour
 
     [SerializeField] private bool _isNotS;
 
+    private AudioSource _audio;
+    [SerializeField] private AudioClip _clip;
+
     private void Awake()
     {
+        _audio = GameObject.Find("Background").GetComponent<AudioSource>();
+
         button = GetComponent<Button>();
         _setter = GetComponent<CardSetter>();
 
@@ -25,6 +30,7 @@ public class ClickManager : MonoBehaviour
 
     private IEnumerator Close()
     {
+        _audio.PlayOneShot(_clip);
         _setter.Use();
         if (_isNotS)
         {

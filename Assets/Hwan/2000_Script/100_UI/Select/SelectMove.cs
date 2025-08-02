@@ -22,7 +22,8 @@ public class SelectMove : MonoBehaviour
     [SerializeField] private CardSetter _cardSetter;
     [SerializeField] private RectMask2D _rectMask;
 
-    private CardMoveMode _mode = CardMoveMode.Pulled;
+    private CardMoveMode _startMode = CardMoveMode.Pulled;
+    private CardMoveMode _mode;
     private void Awake()
     {
         _cardSetter = GameObject.Find("SkillOut").GetComponent<CardSetter>();
@@ -34,6 +35,13 @@ public class SelectMove : MonoBehaviour
         {
             button = GetComponent<Button>();
         }
+    }
+
+    private void OnEnable()
+    {
+        _rectT.anchoredPosition = new Vector2(_rectT.anchoredPosition.x, _stopTargetY);
+        _mode = _startMode;
+        stopCo = null;
     }
 
     public void ChangeMode(int value)

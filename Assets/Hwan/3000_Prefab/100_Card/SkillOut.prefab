@@ -234,6 +234,7 @@ MonoBehaviour:
   _setter: {fileID: 0}
   waitTime: 1
   _isNotS: 0
+  _clip: {fileID: 8300000, guid: 2ead53f2a2f26034d9502d053e9bff7f, type: 3}
 --- !u!114 &-6904174169781616907
 MonoBehaviour:
   m_ObjectHideFlags: 0
