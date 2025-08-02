@@ -23,7 +23,6 @@ public class PoolManager : MonoSingleton<PoolManager>
         IPoolable poolable = item.GetComponent<IPoolable>();
         if(poolable == null)
         {
-            Debug.LogError($"Item {item.name} does not implement IPoolable.");
             return;
         }
         Pool pool = new Pool(poolable, transform, count);
@@ -38,7 +37,6 @@ public class PoolManager : MonoSingleton<PoolManager>
             item.ResetItem();
             return item;
         }
-        Debug.LogError($"Item {itemName} not fount in pool.");
         return null;
     }
 
@@ -49,6 +47,5 @@ public class PoolManager : MonoSingleton<PoolManager>
             _pools[returnItem.ItemName].Push(returnItem);
             return;
         }
-        Debug.LogError($"Item {returnItem.ItemName} not found in pool.");
     }
 }

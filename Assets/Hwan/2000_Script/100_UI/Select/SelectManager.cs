@@ -1,8 +1,4 @@
-
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class SelectManager : MonoBehaviour
 {
@@ -23,14 +19,6 @@ public class SelectManager : MonoBehaviour
         }
 
         setCard = selectUI.GetComponent<SetCard>();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.T))
-        {
-            OpenUI();
-        }
     }
 
     public void OpenUI()

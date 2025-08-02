@@ -54,13 +54,6 @@ public class SetCard : MonoBehaviour
         CardDictionary.Add(9, Instantiate(_statCard_2_Prefab, CardDictionary[3].transform).GetComponent<CardSetter>());
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            ChooseCard();
-        }
-    }
     public void ChooseCard()
     {
         bool maxSkill = true;

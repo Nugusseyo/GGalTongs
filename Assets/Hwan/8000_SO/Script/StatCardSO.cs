@@ -11,7 +11,6 @@ public class StatCardSO : CardSO
 
     public void Apply()
     {
-        Debug.Log("พ๎วรถ๓ภฬตส");
 
         switch (Stat)
         {

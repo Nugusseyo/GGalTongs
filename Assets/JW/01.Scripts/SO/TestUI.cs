@@ -10,7 +10,6 @@ public class TestUI : MonoBehaviour
         {
             _skill[1].Upgrade();
             
-            Debug.Log($"Upgrade , {SkillManager.Instance.SkillList.Contains(_skill[1])}");
         }
         else if (!SkillManager.Instance.SkillList.Contains(_skill[1]))
         {

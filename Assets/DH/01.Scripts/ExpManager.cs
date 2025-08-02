@@ -31,7 +31,6 @@ public class ExpManager : MonoBehaviour
         currentExp += value;
         expBar.GrowingExpBar();
         if (currentExp < goalExp) return;
-        Debug.Log("넘어갔따");
         goalExp = 7 * (CurrentLevel + 1);
         CurrentLevel++;
         currentExp = 0;

@@ -39,7 +39,6 @@ public class CardSetter : MonoBehaviour
             if (SkillManager.Instance.SkillList.Contains(skill))
             {
                 skill.Upgrade();
-                Debug.Log($"Upgrade , {SkillManager.Instance.SkillList.Contains(skill)}");
             }
             else if (!SkillManager.Instance.SkillList.Contains(skill))
             {
@@ -64,7 +63,6 @@ public class CardSetter : MonoBehaviour
     {
         if (_nowSkill == null)
         {
-            Debug.Log("sdf");
             SetCard(_nowStat);
         }
         else
