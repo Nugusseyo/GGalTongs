@@ -704,6 +704,8 @@ MonoBehaviour:
   <Name>k__BackingField: {fileID: 2927623382291829375}
   <Level>k__BackingField: {fileID: 4694188490885263563}
   _nowSkill: {fileID: 0}
+  _isInside: 1
+  ChildCardSetter: {fileID: 0}
 --- !u!95 &-1630151833994638526
 Animator:
   serializedVersion: 7
@@ -741,6 +743,6 @@ MonoBehaviour:
   _isNotS: 0
   _stopTargetY: 0
   _speed: 17500
-  _interval: 1
+  _interval: 0.93
   _cardSetter: {fileID: 6988399905331134477, guid: 2f77d473265478846ba5ece3e1ec1d31, type: 3}
-  _mode: 0
+  _rectMask: {fileID: 0}
