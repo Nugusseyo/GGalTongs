@@ -38,7 +38,7 @@ public class EnemySpawn : MonoBehaviour
         }
         else
         {
-            StartCoroutine(EnemySpawnCoroutine(_spawnDelay - (ExpManager.Instance.CurrentLevel / 10)));
+            StartCoroutine(EnemySpawnCoroutine(_spawnDelay - (ExpManager.Instance.CurrentLevel / 5)));
         }
     }
 }
