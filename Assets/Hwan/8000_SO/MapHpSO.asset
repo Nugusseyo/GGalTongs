@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e7a7c49e6c66f4e8df6c8d40a9b4ed, type: 3}
   m_Name: MapHpSO
   m_EditorClassIdentifier: 
-  Name: "\uCD5C\uB300 \uCCB4\uB825"
+  Name: "\uD65C\uB825"
   Desc: "\uD604\uC7AC, \uCD5C\uB300 \uCCB4\uB825 \uC99D\uAC00"
   Image: {fileID: 3568478954535096725, guid: 171b393d18340444295cf27fbec596c6, type: 3}
   CurrentLevel: 1

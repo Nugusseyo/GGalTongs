@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e7a7c49e6c66f4e8df6c8d40a9b4ed, type: 3}
   m_Name: DamageSO
   m_EditorClassIdentifier: 
-  Name: "\uB370\uBBF8\uC9C0"
+  Name: "\uC608\uB9AC\uD55C \uAC80"
   Desc: "\uB370\uBBF8\uC9C0 \uC99D\uAC00"
   Image: {fileID: -5257656354007605394, guid: 171b393d18340444295cf27fbec596c6, type: 3}
   CurrentLevel: 7

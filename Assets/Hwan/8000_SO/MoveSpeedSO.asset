@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e7a7c49e6c66f4e8df6c8d40a9b4ed, type: 3}
   m_Name: MoveSpeedSO
   m_EditorClassIdentifier: 
-  Name: "\uC774\uB3D9 \uC18D\uB3C4"
+  Name: "\uAC00\uC18D \uC7A5\uD654"
   Desc: "\uC774\uB3D9 \uC18D\uB3C4 \uC99D\uAC00"
   Image: {fileID: -7740097355486894076, guid: 171b393d18340444295cf27fbec596c6, type: 3}
   CurrentLevel: 4

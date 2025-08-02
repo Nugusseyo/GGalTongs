@@ -16,11 +16,11 @@ MonoBehaviour:
   Name: "\uB808\uC774\uC800 \uAC74"
   LevelLimit: 5
   CurrentLevel: 0
-  SkillDesc: "\uC790\uB3D9 \uC870\uC900\uB418\uB294\\n\uB808\uC774\uC800 \uBC1C\uC0AC\uCCB4\uAC00\\n\uB0A0\uC544\uAC00
-    \uC801\uC744\\n\uACF5\uACA9\uD569\uB2C8\uB2E4."
+  SkillDesc: "\uC801\uC5D0\uAC8C \uD53C\uD574\uB97C\\n\uC785\uD788\uB294 \uBC1C\uC0AC\uCCB4\uAC00\\n\uB79C\uB364\uD55C
+    \uBC29\uD5A5\uC73C\uB85C\\n\uB0A0\uC544\uAC11\uB2C8\uB2E4."
   CoolT: 2
   CurrentCoolT: 2
   ActiveCount: 0
   _lazer: {fileID: 2622078800461583653, guid: b682660bbd0cd6b408f62818cab0c4e9, type: 3}
   spawnPoint: {fileID: 0}
-  AtkDMG: 4
+  AtkDMG: 3

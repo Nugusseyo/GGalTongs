@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RandomAttack
   m_EditorClassIdentifier: 
   Icon: {fileID: -3527868426062826577, guid: 6fc00bb94f5202746b1138a69058f18c, type: 3}
-  Name: "\uC2EC\uD310"
+  Name: "\uCC9C\uBC8C"
   LevelLimit: 5
   CurrentLevel: 1
   SkillDesc: "\uB79C\uB364\uD55C \uC704\uCE58\uC5D0\uC11C\\n\uB808\uC774\uC800\uAC00\\n\uBE57\uBC1C\uCE69\uB2C8\uB2E4."
@@ -21,3 +21,4 @@ MonoBehaviour:
   CurrentCoolT: 0
   ActiveCount: 0
   AtkDMG: 2
+  _audio: {fileID: 0}
