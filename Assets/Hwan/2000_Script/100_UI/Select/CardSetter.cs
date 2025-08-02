@@ -43,7 +43,6 @@ public class CardSetter : MonoBehaviour
             }
             else if (!SkillManager.Instance.SkillList.Contains(skill))
             {
-                Debug.Log(12);
                 SkillManager.Instance.Add(skill);
             }
 
