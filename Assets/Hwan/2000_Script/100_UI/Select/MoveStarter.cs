@@ -28,14 +28,15 @@ public class MoveStarter : MonoBehaviour
         }
         else
         {
+            _audio.PlayOneShot(_clip);
             isFirst = false;
         }
     }
 
     private void ChangeCard()
     {
-        _audio.PlayOneShot(_clip);
         MoveStart?.Invoke();
         setCard.ChooseCard();
+        _audio.PlayOneShot(_clip);
     }
 }

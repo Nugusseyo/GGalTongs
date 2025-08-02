@@ -34,7 +34,7 @@ public class Slot : MonoBehaviour
     }
     public void InstallationTorch()
     {
-        HealthBarUI.Instance.PlusCurrentHealth(5);
+        HealthBarUI.Instance.PlusCurrentHealth(1);
         isThere = true;
         gameObject.SetActive(false);
         GameObject torch = Instantiate(torchPrefab, transform.position, Quaternion.identity);

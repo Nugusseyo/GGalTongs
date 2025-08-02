@@ -32,7 +32,7 @@ public class EnemySpawn : MonoBehaviour
             enemyGO = enemy.GameObject;
         }
         enemyGO.transform.position = spawnPoints[Random.Range(0, spawnPoints.Length)].position;
-        if (_spawnDelay - ExpManager.Instance.CurrentLevel / 10 < 0.4)
+        if (_spawnDelay - ExpManager.Instance.CurrentLevel / 5 < 0.4)
         {
             StartCoroutine(EnemySpawnCoroutine(_spawnDelay - (float)4.6));
         }
